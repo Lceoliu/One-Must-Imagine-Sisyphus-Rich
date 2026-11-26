@@ -2,7 +2,7 @@
 
 Source code for **One Must Imagine Sisyphus Rich** (应当想象西西弗斯很有钱), a short incremental game drawn like a Greek black-figure vase. Entry for GitHub Game Off 2026.
 
-**Play:** TODO: itch.io link (Windows, English / 简体中文)
+**Play:** [eolc.itch.io/one-must-imagine](https://eolc.itch.io/one-must-imagine) (Windows, English / 简体中文)
 
 ## The game
 
