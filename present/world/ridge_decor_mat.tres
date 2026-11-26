@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://present/shaders/depth_sprite.gdshader" id="1_rd"]
+
+[resource]
+shader = ExtResource("1_rd")
+shader_parameter/day_ink = Color(0.36, 0.27, 0.23, 1)
+shader_parameter/day_line = Color(0.6, 0.5, 0.43, 1)
+shader_parameter/dusk_ink = Color(0.2, 0.12, 0.11, 1)
+shader_parameter/dusk_line = Color(0.42, 0.3, 0.27, 1)
+shader_parameter/night_ink = Color(0.065, 0.085, 0.14, 1)
+shader_parameter/night_line = Color(0.19, 0.24, 0.35, 1)
+shader_parameter/sky = Color(0.8, 0.75, 0.68, 1)
+shader_parameter/haze = 0.3
+shader_parameter/tod_tint = Color(1, 1, 1, 1)
+shader_parameter/lo = 0.15
+shader_parameter/hi = 0.75
+shader_parameter/line_keep = 0.7
+shader_parameter/mip_bias = 0.6
+shader_parameter/blur_px = 0.0
+shader_parameter/opacity = 1.0
+shader_parameter/focus_n = 0
+shader_parameter/zone_n = 0
+shader_parameter/min_alpha = 1.0

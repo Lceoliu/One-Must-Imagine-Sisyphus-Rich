@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Theme" path="res://present/ui/theme_vase.tres" id="1_theme"]
+[ext_resource type="Script" path="res://present/ui/choice_screen.gd" id="2_script"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_900.tres" id="3_s900"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_600.tres" id="4_s600"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_500.tres" id="5_s500"]
+[ext_resource type="Script" path="res://present/ui/meander_rule.gd" id="6_rule"]
+
+[node name="ChoiceScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+
+[node name="Dim" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0705882, 0.0470588, 0.0392157, 0.55)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(620, 0)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center/Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Art" type="TextureRect" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(420, 280)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_s900")
+theme_override_font_sizes/font_size = 42
+text = "山 顶"
+horizontal_alignment = 1
+
+[node name="Rule" type="Control" parent="Center/Panel/VBox"]
+custom_minimum_size = Vector2(240, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+script = ExtResource("6_rule")
+
+[node name="Subtitle" type="Label" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 0.7)
+theme_override_fonts/font = ExtResource("4_s600")
+theme_override_font_sizes/font_size = 18
+text = "副标题"
+horizontal_alignment = 1
+
+[node name="Body" type="Label" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_s500")
+theme_override_font_sizes/font_size = 19
+text = "正文（可选）"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Gap" type="Control" parent="Center/Panel/VBox"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Buttons" type="VBoxContainer" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 4

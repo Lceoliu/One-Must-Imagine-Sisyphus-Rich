@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://present/world/dawn_shot.gd" id="1_dawn"]
+
+[node name="DawnShot" type="CanvasLayer"]
+layer = 30
+script = ExtResource("1_dawn")
+
+[node name="Fade" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.03, 0.03, 0.06, 1)
+
+[node name="Hint" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -64.0
+offset_right = -36.0
+offset_bottom = -28.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.93, 0.86, 0.72, 0.8)
+theme_override_colors/font_outline_color = Color(0.08, 0.05, 0.04, 0.9)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 22
+text = "空格 · 跳过"
+horizontal_alignment = 2

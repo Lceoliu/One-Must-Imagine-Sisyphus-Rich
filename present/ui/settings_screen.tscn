@@ -1,0 +1,948 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Theme" path="res://present/ui/theme_vase.tres" id="1_theme"]
+[ext_resource type="Script" path="res://present/ui/settings_screen.gd" id="2_script"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_900.tres" id="3_s900"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_700.tres" id="4_s700"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_500.tres" id="5_s500"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_800.tres" id="6_s800"]
+[ext_resource type="Script" path="res://present/ui/meander_rule.gd" id="7_rule"]
+
+[node name="SettingsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0705882, 0.0470588, 0.0392157, 0.55)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(1000, 700)
+layout_mode = 2
+
+[node name="Outer" type="VBoxContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Center/Panel/Outer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_s900")
+theme_override_font_sizes/font_size = 38
+text = "设 置"
+horizontal_alignment = 1
+
+[node name="Rule" type="Control" parent="Center/Panel/Outer"]
+custom_minimum_size = Vector2(220, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+script = ExtResource("7_rule")
+
+[node name="Tabs" type="HBoxContainer" parent="Center/Panel/Outer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 6
+
+[node name="TabSound" type="Button" parent="Center/Panel/Outer/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 46)
+layout_mode = 2
+theme_type_variation = &"TabButton"
+toggle_mode = true
+theme_override_fonts/font = ExtResource("6_s800")
+theme_override_font_sizes/font_size = 22
+text = "声音"
+
+[node name="TabDisplay" type="Button" parent="Center/Panel/Outer/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 46)
+layout_mode = 2
+theme_type_variation = &"TabButton"
+toggle_mode = true
+theme_override_fonts/font = ExtResource("6_s800")
+theme_override_font_sizes/font_size = 22
+text = "画面"
+
+[node name="TabComfort" type="Button" parent="Center/Panel/Outer/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 46)
+layout_mode = 2
+theme_type_variation = &"TabButton"
+toggle_mode = true
+theme_override_fonts/font = ExtResource("6_s800")
+theme_override_font_sizes/font_size = 22
+text = "辅助"
+
+[node name="TabControls" type="Button" parent="Center/Panel/Outer/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 46)
+layout_mode = 2
+theme_type_variation = &"TabButton"
+toggle_mode = true
+theme_override_fonts/font = ExtResource("6_s800")
+theme_override_font_sizes/font_size = 22
+text = "操作"
+
+[node name="TabGame" type="Button" parent="Center/Panel/Outer/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 46)
+layout_mode = 2
+theme_type_variation = &"TabButton"
+toggle_mode = true
+theme_override_fonts/font = ExtResource("6_s800")
+theme_override_font_sizes/font_size = 22
+text = "游戏"
+
+[node name="TabDev" type="Button" parent="Center/Panel/Outer/Tabs"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 46)
+layout_mode = 2
+theme_type_variation = &"TabButton"
+toggle_mode = true
+theme_override_fonts/font = ExtResource("6_s800")
+theme_override_font_sizes/font_size = 22
+text = "开发"
+
+[node name="TabLine" type="ColorRect" parent="Center/Panel/Outer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.0705882, 0.0470588, 0.0392157, 0.45)
+
+[node name="TabGap" type="Control" parent="Center/Panel/Outer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Pages" type="Control" parent="Center/Panel/Outer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(900, 590)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PageSound" type="VBoxContainer" parent="Center/Panel/Outer/Pages"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="MasterRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageSound"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageSound/MasterRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "总音量"
+
+[node name="Master" type="HSlider" parent="Center/Panel/Outer/Pages/PageSound/MasterRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+min_value = 0.0
+step = 0.01
+value = 1.0
+
+[node name="MasterVal" type="Label" parent="Center/Panel/Outer/Pages/PageSound/MasterRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="SfxRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageSound"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageSound/SfxRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "音效"
+
+[node name="Sfx" type="HSlider" parent="Center/Panel/Outer/Pages/PageSound/SfxRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+min_value = 0.0
+step = 0.01
+value = 1.0
+
+[node name="SfxVal" type="Label" parent="Center/Panel/Outer/Pages/PageSound/SfxRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="MusicRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageSound"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageSound/MusicRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "音乐"
+
+[node name="Music" type="HSlider" parent="Center/Panel/Outer/Pages/PageSound/MusicRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+min_value = 0.0
+step = 0.01
+value = 1.0
+
+[node name="MusicVal" type="Label" parent="Center/Panel/Outer/Pages/PageSound/MusicRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="AmbRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageSound"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageSound/AmbRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "环境声"
+
+[node name="Amb" type="HSlider" parent="Center/Panel/Outer/Pages/PageSound/AmbRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+min_value = 0.0
+step = 0.01
+value = 1.0
+
+[node name="AmbVal" type="Label" parent="Center/Panel/Outer/Pages/PageSound/AmbRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="MuteUnfocused" type="CheckBox" parent="Center/Panel/Outer/Pages/PageSound"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "切到别的窗口时静音"
+
+[node name="PageDisplay" type="VBoxContainer" parent="Center/Panel/Outer/Pages"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="WindowModeRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageDisplay"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageDisplay/WindowModeRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "显示模式"
+
+[node name="WindowMode" type="OptionButton" parent="Center/Panel/Outer/Pages/PageDisplay/WindowModeRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="WindowSizeRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageDisplay"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageDisplay/WindowSizeRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "窗口大小"
+
+[node name="WindowSize" type="OptionButton" parent="Center/Panel/Outer/Pages/PageDisplay/WindowSizeRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="MaxFpsRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageDisplay"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageDisplay/MaxFpsRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "帧率上限"
+
+[node name="MaxFps" type="OptionButton" parent="Center/Panel/Outer/Pages/PageDisplay/MaxFpsRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Vsync" type="CheckBox" parent="Center/Panel/Outer/Pages/PageDisplay"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "垂直同步（画面不撕裂；关掉可能更跟手）"
+
+[node name="GfxHeadGap" type="Control" parent="Center/Panel/Outer/Pages/PageDisplay"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="GfxHead" type="Label" parent="Center/Panel/Outer/Pages/PageDisplay"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 0.66)
+theme_override_fonts/font = ExtResource("4_s700")
+theme_override_font_sizes/font_size = 18
+text = "画质"
+
+[node name="GfxPresetRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageDisplay"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageDisplay/GfxPresetRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "画质预设"
+
+[node name="GfxPreset" type="OptionButton" parent="Center/Panel/Outer/Pages/PageDisplay/GfxPresetRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="RenderScaleRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageDisplay"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageDisplay/RenderScaleRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "渲染分辨率"
+
+[node name="RenderScale" type="OptionButton" parent="Center/Panel/Outer/Pages/PageDisplay/RenderScaleRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="FxLevelRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageDisplay"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageDisplay/FxLevelRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "特效数量"
+
+[node name="FxLevel" type="OptionButton" parent="Center/Panel/Outer/Pages/PageDisplay/FxLevelRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="BgLevelRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageDisplay"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageDisplay/BgLevelRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "背景细节"
+
+[node name="BgLevel" type="OptionButton" parent="Center/Panel/Outer/Pages/PageDisplay/BgLevelRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="LightLevelRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageDisplay"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageDisplay/LightLevelRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "夜宴光影"
+
+[node name="LightLevel" type="OptionButton" parent="Center/Panel/Outer/Pages/PageDisplay/LightLevelRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="GfxNote" type="Label" parent="Center/Panel/Outer/Pages/PageDisplay"]
+custom_minimum_size = Vector2(860, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 0.66)
+theme_override_fonts/font = ExtResource("5_s500")
+theme_override_font_sizes/font_size = 17
+text = "渲染分辨率只影响山、城和夜宴的画面，文字和状态栏始终清晰。卡顿时先降它。"
+autowrap_mode = 3
+
+[node name="PageComfort" type="VBoxContainer" parent="Center/Panel/Outer/Pages"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="UiScaleRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageComfort"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageComfort/UiScaleRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "界面大小"
+
+[node name="UiScale" type="HSlider" parent="Center/Panel/Outer/Pages/PageComfort/UiScaleRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.3
+min_value = 0.8
+step = 0.05
+value = 1.3
+
+[node name="UiScaleVal" type="Label" parent="Center/Panel/Outer/Pages/PageComfort/UiScaleRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="ShakeRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageComfort"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageComfort/ShakeRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "震屏强度"
+
+[node name="Shake" type="HSlider" parent="Center/Panel/Outer/Pages/PageComfort/ShakeRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+min_value = 0.0
+step = 0.01
+value = 1.0
+
+[node name="ShakeVal" type="Label" parent="Center/Panel/Outer/Pages/PageComfort/ShakeRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="FlashRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageComfort"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageComfort/FlashRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "闪光强度"
+
+[node name="Flash" type="HSlider" parent="Center/Panel/Outer/Pages/PageComfort/FlashRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+min_value = 0.0
+step = 0.01
+value = 1.0
+
+[node name="FlashVal" type="Label" parent="Center/Panel/Outer/Pages/PageComfort/FlashRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="FeelRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageComfort"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageComfort/FeelRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "顿帧 / 慢放"
+
+[node name="Feel" type="HSlider" parent="Center/Panel/Outer/Pages/PageComfort/FeelRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+min_value = 0.0
+step = 0.01
+value = 1.0
+
+[node name="FeelVal" type="Label" parent="Center/Panel/Outer/Pages/PageComfort/FeelRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="DisplayNote" type="Label" parent="Center/Panel/Outer/Pages/PageComfort"]
+custom_minimum_size = Vector2(860, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 0.66)
+theme_override_fonts/font = ExtResource("5_s500")
+theme_override_font_sizes/font_size = 17
+text = "界面大小只缩放游戏里的状态栏和提示。震屏、闪光、顿帧调低都不影响玩法；对光敏感时可以把闪光调到 0。"
+autowrap_mode = 3
+
+[node name="PageControls" type="VBoxContainer" parent="Center/Panel/Outer/Pages"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="AutoPush" type="CheckBox" parent="Center/Panel/Outer/Pages/PageControls"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "自动推石（替你按节奏交替按左右）"
+
+[node name="AutoRateRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageControls"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageControls/AutoRateRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "自动推石频率"
+
+[node name="AutoRate" type="HSlider" parent="Center/Panel/Outer/Pages/PageControls/AutoRateRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 8.0
+min_value = 1.0
+step = 0.25
+value = 8.0
+
+[node name="AutoRateVal" type="Label" parent="Center/Panel/Outer/Pages/PageControls/AutoRateRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+
+[node name="AutoHint" type="Label" parent="Center/Panel/Outer/Pages/PageControls"]
+custom_minimum_size = Vector2(860, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 0.66)
+theme_override_fonts/font = ExtResource("5_s500")
+theme_override_font_sizes/font_size = 17
+text = "每秒按 2–5.5 次能叠节奏：越快推得越高，也越容易累倒。"
+autowrap_mode = 3
+
+[node name="BindHeadGap" type="Control" parent="Center/Panel/Outer/Pages/PageControls"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BindHead" type="Label" parent="Center/Panel/Outer/Pages/PageControls"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 0.66)
+theme_override_fonts/font = ExtResource("4_s700")
+theme_override_font_sizes/font_size = 18
+text = "键位（点一下，再按新的键或鼠标键；Esc 取消，Delete / 退格清空）"
+
+[node name="Scroll" type="ScrollContainer" parent="Center/Panel/Outer/Pages/PageControls"]
+custom_minimum_size = Vector2(0, 220)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Bindings" type="VBoxContainer" parent="Center/Panel/Outer/Pages/PageControls/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="Row_push_left" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_push_left"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "推石 · 左"
+
+[node name="Slot0" type="Button" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_push_left"]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+theme_type_variation = &"SlotButton"
+text = "—"
+
+[node name="Slot1" type="Button" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_push_left"]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+theme_type_variation = &"SlotButton"
+text = "—"
+
+[node name="Row_push_right" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_push_right"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "推石 · 右"
+
+[node name="Slot0" type="Button" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_push_right"]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+theme_type_variation = &"SlotButton"
+text = "—"
+
+[node name="Slot1" type="Button" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_push_right"]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+theme_type_variation = &"SlotButton"
+text = "—"
+
+[node name="Row_strike" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_strike"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "重压 / 砸地 / 跳过"
+
+[node name="Slot0" type="Button" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_strike"]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+theme_type_variation = &"SlotButton"
+text = "—"
+
+[node name="Slot1" type="Button" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_strike"]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+theme_type_variation = &"SlotButton"
+text = "—"
+
+[node name="Row_end_day" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_end_day"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "提前收工"
+
+[node name="Slot0" type="Button" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_end_day"]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+theme_type_variation = &"SlotButton"
+text = "—"
+
+[node name="Slot1" type="Button" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_end_day"]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+theme_type_variation = &"SlotButton"
+text = "—"
+
+[node name="Row_interact" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_interact"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "夜宴 · 交谈 / 交易"
+
+[node name="Slot0" type="Button" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_interact"]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+theme_type_variation = &"SlotButton"
+text = "—"
+
+[node name="Slot1" type="Button" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_interact"]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+theme_type_variation = &"SlotButton"
+text = "—"
+
+[node name="Row_overview" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_overview"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "夜宴 · 全场速览"
+
+[node name="Slot0" type="Button" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_overview"]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+theme_type_variation = &"SlotButton"
+text = "—"
+
+[node name="Slot1" type="Button" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_overview"]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+theme_type_variation = &"SlotButton"
+text = "—"
+
+[node name="Row_console" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_console"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "调试控制台"
+
+[node name="Slot0" type="Button" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_console"]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+theme_type_variation = &"SlotButton"
+text = "—"
+
+[node name="Slot1" type="Button" parent="Center/Panel/Outer/Pages/PageControls/Scroll/Bindings/Row_console"]
+custom_minimum_size = Vector2(230, 40)
+layout_mode = 2
+theme_type_variation = &"SlotButton"
+text = "—"
+
+[node name="ResetBindings" type="Button" parent="Center/Panel/Outer/Pages/PageControls"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 42)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"SlotButton"
+text = "键位恢复默认"
+
+[node name="PageGame" type="VBoxContainer" parent="Center/Panel/Outer/Pages"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="PauseOnBlur" type="CheckBox" parent="Center/Panel/Outer/Pages/PageGame"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "切到别的窗口时自动暂停"
+
+[node name="HintModeRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageGame"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageGame/HintModeRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "底部操作提示"
+
+[node name="HintMode" type="OptionButton" parent="Center/Panel/Outer/Pages/PageGame/HintModeRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="SaveHeadGap" type="Control" parent="Center/Panel/Outer/Pages/PageGame"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SaveHead" type="Label" parent="Center/Panel/Outer/Pages/PageGame"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 0.66)
+theme_override_fonts/font = ExtResource("4_s700")
+theme_override_font_sizes/font_size = 18
+text = "存档"
+
+[node name="SaveNote" type="Label" parent="Center/Panel/Outer/Pages/PageGame"]
+custom_minimum_size = Vector2(860, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 0.66)
+theme_override_fonts/font = ExtResource("5_s500")
+theme_override_font_sizes/font_size = 17
+text = "游戏没有手动存档：每天结束、回主菜单和退出时自动保存（右下角会闪一下「已自动保存」）。"
+autowrap_mode = 3
+
+[node name="OpenSaves" type="Button" parent="Center/Panel/Outer/Pages/PageGame"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 42)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"SlotButton"
+text = "打开存档文件夹"
+
+[node name="LangHeadGap" type="Control" parent="Center/Panel/Outer/Pages/PageGame"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LangHead" type="Label" parent="Center/Panel/Outer/Pages/PageGame"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 0.66)
+theme_override_fonts/font = ExtResource("4_s700")
+theme_override_font_sizes/font_size = 18
+text = "语言"
+
+[node name="LangRow" type="HBoxContainer" parent="Center/Panel/Outer/Pages/PageGame"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Name" type="Label" parent="Center/Panel/Outer/Pages/PageGame/LangRow"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "界面语言"
+
+[node name="Language" type="OptionButton" parent="Center/Panel/Outer/Pages/PageGame/LangRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="LangNote" type="Label" parent="Center/Panel/Outer/Pages/PageGame"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(860, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 0.66)
+theme_override_fonts/font = ExtResource("5_s500")
+theme_override_font_sizes/font_size = 17
+text = "游戏进行中不能切换语言，回到主菜单后再切换。"
+autowrap_mode = 3
+
+[node name="ResetGap" type="Control" parent="Center/Panel/Outer/Pages/PageGame"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ResetAll" type="Button" parent="Center/Panel/Outer/Pages/PageGame"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 42)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"SlotButton"
+text = "恢复默认设置（键位不变）"
+
+[node name="PageDev" type="VBoxContainer" parent="Center/Panel/Outer/Pages"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="DebugConsole" type="CheckBox" parent="Center/Panel/Outer/Pages/PageDev"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "开启调试控制台"
+
+[node name="DevNote" type="Label" parent="Center/Panel/Outer/Pages/PageDev"]
+custom_minimum_size = Vector2(860, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 0.66)
+theme_override_fonts/font = ExtResource("5_s500")
+theme_override_font_sizes/font_size = 17
+text = "控制台能直接改钱、天数、天赋，测试用。打开后在游戏里按上面的键呼出，输入 help 看全部命令。"
+autowrap_mode = 3
+
+[node name="Note" type="Label" parent="Center/Panel/Outer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 0.66)
+theme_override_fonts/font = ExtResource("5_s500")
+theme_override_font_sizes/font_size = 16
+text = ""
+horizontal_alignment = 1
+
+[node name="Foot" type="HBoxContainer" parent="Center/Panel/Outer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Back" type="Button" parent="Center/Panel/Outer/Foot"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 48)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_s800")
+theme_override_font_sizes/font_size = 24
+text = "返回"

@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://present/shaders/hub_lit.gdshader" id="1_lit"]
+
+[resource]
+shader = ExtResource("1_lit")
+shader_parameter/rim = 3.0
+shader_parameter/moon_rim = 1.6
+shader_parameter/body = 0.07
+shader_parameter/edge_gain = 1.8

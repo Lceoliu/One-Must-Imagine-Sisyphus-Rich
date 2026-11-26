@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://present/ui/payslip_row.gd" id="1_row"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_700.tres" id="2_s700"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_500.tres" id="3_s500"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/cinzel_700.tres" id="4_c700"]
+[ext_resource type="Texture2D" path="res://assets/sprites/sh_ui_kit/coin_drachma.png" id="5_coin"]
+
+[node name="PayslipRow" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 34)
+theme_override_constants/separation = 10
+script = ExtResource("1_row")
+
+[node name="Icon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(46, 32)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("5_coin")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Stack" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(46, 32)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="I1" type="TextureRect" parent="Stack"]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 28.0
+offset_bottom = 32.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="I2" type="TextureRect" parent="Stack"]
+layout_mode = 0
+offset_left = 9.0
+offset_right = 37.0
+offset_bottom = 24.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="I3" type="TextureRect" parent="Stack"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 8.0
+offset_right = 46.0
+offset_bottom = 32.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Spool" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(46, 32)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Text" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_s700")
+theme_override_font_sizes/font_size = 20
+text = "碾平 民居 ×12"
+vertical_alignment = 1
+
+[node name="Note" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 0.6)
+theme_override_fonts/font = ExtResource("3_s500")
+theme_override_font_sizes/font_size = 14
+text = "白天已入账"
+vertical_alignment = 1
+
+[node name="Leader" type="Control" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Value" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("4_c700")
+theme_override_font_sizes/font_size = 21
+text = "+4,820"
+horizontal_alignment = 2
+vertical_alignment = 1

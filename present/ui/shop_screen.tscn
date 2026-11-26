@@ -1,0 +1,221 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Theme" path="res://present/ui/theme.tres" id="1_mcd8n"]
+[ext_resource type="Script" path="res://present/ui/shop_screen.gd" id="2_njuqu"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_900.tres" id="3_ehpva"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_500.tres" id="4_piv4f"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/cinzel_700.tres" id="5_liiun"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_600.tres" id="6_iu06b"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_800.tres" id="7_0agdc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1ub4"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.22745098, 0.14117648, 0.0627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.7254902, 0.22745098, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s6sq8"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.2901961, 0.18039216, 0.078431375, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.8784314, 0.5411765, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8epjy"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.22745098, 0.14117648, 0.0627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.7254902, 0.22745098, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tyi0"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.2901961, 0.18039216, 0.078431375, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.8784314, 0.5411765, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(2, 4)
+
+[node name="ShopScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("1_mcd8n")
+script = ExtResource("2_njuqu")
+
+[node name="Dim" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.02, 0.015, 0.01, 0.94)
+
+[node name="Root" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 28.0
+offset_right = -40.0
+offset_bottom = -24.0
+theme_override_constants/separation = 12
+
+[node name="Head" type="HBoxContainer" parent="Root"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Title" type="Label" parent="Root/Head"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ehpva")
+theme_override_font_sizes/font_size = 36
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+text = "赫尔墨斯小摊"
+
+[node name="Sub" type="Label" parent="Root/Head"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_piv4f")
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "钱从山下赚，货在夜宴买，概不赊账。"
+autowrap_mode = 3
+
+[node name="Money" type="Label" parent="Root/Head"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_liiun")
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(1, 0.8784314, 0.5411765, 1)
+text = "1,234"
+horizontal_alignment = 2
+
+[node name="Unit" type="Label" parent="Root/Head"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_iu06b")
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "德拉克马"
+
+[node name="Moira" type="Label" parent="Root/Head"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_liiun")
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.91764706, 0.85882354, 0.72156864, 1)
+text = "37"
+horizontal_alignment = 2
+
+[node name="MoiraUnit" type="Label" parent="Root/Head"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_iu06b")
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "命运"
+
+[node name="Scroll" type="ScrollContainer" parent="Root"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Grid" type="HBoxContainer" parent="Root/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Foot" type="HBoxContainer" parent="Root"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Tip" type="Label" parent="Root/Foot"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_piv4f")
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+autowrap_mode = 3
+
+[node name="Progress" type="Label" parent="Root/Foot"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_iu06b")
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "完成度 0 / 147"
+
+[node name="Back" type="Button" parent="Root/Foot"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_x1ub4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s6sq8")
+theme_override_colors/font_color = Color(1, 0.8784314, 0.5411765, 1)
+theme_override_fonts/font = ExtResource("7_0agdc")
+theme_override_font_sizes/font_size = 22
+text = "回到宴会"
+
+[node name="Go" type="Button" parent="Root/Foot"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_8epjy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3tyi0")
+theme_override_colors/font_color = Color(1, 0.8784314, 0.5411765, 1)
+theme_override_fonts/font = ExtResource("7_0agdc")
+theme_override_font_sizes/font_size = 24
+text = "开工 · 第 1 日"

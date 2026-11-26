@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/native/fx_fire/fire_big_0.png" id="1_5jst3"]
+[ext_resource type="Texture2D" path="res://assets/native/fx_fire/fire_big_1.png" id="2_3xobf"]
+[ext_resource type="Texture2D" path="res://assets/native/fx_fire/fire_big_2.png" id="3_ihk16"]
+[ext_resource type="Texture2D" path="res://assets/native/fx_fire/fire_big_3.png" id="4_mh0nf"]
+[ext_resource type="Texture2D" path="res://assets/native/fx_fire/fire_big_4.png" id="5_itt47"]
+[ext_resource type="Texture2D" path="res://assets/native/fx_fire/fire_big_5.png" id="6_yw4yo"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5jst3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3xobf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ihk16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mh0nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_itt47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yw4yo")
+}],
+"loop": true,
+"name": &"flame",
+"speed": 10.0
+}]

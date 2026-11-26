@@ -1,0 +1,47 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://6gu5ug8coeo1"]
+
+[ext_resource type="Shader" uid="uid://cte4bkosnfwga" path="res://present/shaders/terrain.gdshader" id="1_tr"]
+
+[resource]
+shader = ExtResource("1_tr")
+shader_parameter/day_fill = Color(0.7686, 0.5294, 0.3608, 1)
+shader_parameter/day_shade = Color(0.6353, 0.4000, 0.2745, 1)
+shader_parameter/day_ink = Color(0.165, 0.098, 0.067, 1)
+shader_parameter/day_lip = Color(0.8706, 0.7059, 0.5490, 1)
+shader_parameter/day_glaze = Color(0.11, 0.071, 0.051, 1)
+shader_parameter/dusk_fill = Color(0.541, 0.345, 0.29, 1)
+shader_parameter/dusk_shade = Color(0.443, 0.275, 0.235, 1)
+shader_parameter/dusk_ink = Color(0.11, 0.059, 0.051, 1)
+shader_parameter/dusk_lip = Color(0.62, 0.42, 0.345, 1)
+shader_parameter/dusk_glaze = Color(0.075, 0.043, 0.039, 1)
+shader_parameter/night_fill = Color(0.184, 0.227, 0.333, 1)
+shader_parameter/night_shade = Color(0.149, 0.184, 0.278, 1)
+shader_parameter/night_ink = Color(0.035, 0.047, 0.086, 1)
+shader_parameter/night_lip = Color(0.243, 0.29, 0.408, 1)
+shader_parameter/night_glaze = Color(0.047, 0.059, 0.11, 1)
+shader_parameter/top_period_m = 10.6743
+shader_parameter/top_h_m = 4.1371
+shader_parameter/top_surface_m = 0.6286
+shader_parameter/deep_period_m = 10.6229
+shader_parameter/deep_h_m = 1.9543
+shader_parameter/joint_w_m = 0.05
+shader_parameter/day_sat = 0.8
+shader_parameter/day_gain = 1.07
+shader_parameter/snow = Color(0.93, 0.89, 0.82, 1)
+shader_parameter/band_edges = Vector3(120, 350, 650)
+shader_parameter/band_blend = 40.0
+shader_parameter/band_noise = 1.0
+shader_parameter/band_soft = 0.0
+shader_parameter/foot_alt = Vector2(0.3, 2.5)
+shader_parameter/band_m = 2.75
+shader_parameter/foot_band_m = 2.75
+shader_parameter/band_h_m = 0.8
+shader_parameter/band_bg_k = 0.3
+shader_parameter/band_ramp = Vector2(-4, 26)
+shader_parameter/band_switch_m = 6.0
+shader_parameter/glaze_line_m = 0.22
+shader_parameter/glaze_line_a = 0.5
+shader_parameter/line_px = 2.6
+shader_parameter/frame_px = 2.2
+shader_parameter/far_mpp = Vector2(0.02, 0.06)
+shader_parameter/far_contrast = 0.6

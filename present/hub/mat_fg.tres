@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://present/shaders/hub_lit_recolor.gdshader" id="1_rc"]
+
+[resource]
+shader = ExtResource("1_rc")
+shader_parameter/fill_color = Color(0.05, 0.045, 0.045, 1)
+shader_parameter/line_color = Color(0.2, 0.18, 0.16, 1)
+shader_parameter/lo = 0.15
+shader_parameter/hi = 0.75
+shader_parameter/fade_bottom = 0.0
+shader_parameter/rim = 0.35
+shader_parameter/moon_rim = 0.3
+shader_parameter/body = 0.03
+shader_parameter/edge_gain = 1.8

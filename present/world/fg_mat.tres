@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=4 uid="uid://c8kaddcbnv43q"]
+
+[ext_resource type="Shader" uid="uid://cirk5i7x7vo5f" path="res://present/shaders/depth_sprite.gdshader" id="1_fg"]
+
+[resource]
+shader = ExtResource("1_fg")
+shader_parameter/day_ink = Color(0.04, 0.026, 0.02, 1)
+shader_parameter/day_line = Color(0.5, 0.31, 0.2, 1)
+shader_parameter/dusk_ink = Color(0.032, 0.02, 0.018, 1)
+shader_parameter/dusk_line = Color(0.38, 0.22, 0.17, 1)
+shader_parameter/night_ink = Color(0.012, 0.015, 0.03, 1)
+shader_parameter/night_line = Color(0.17, 0.21, 0.31, 1)
+shader_parameter/sky = Color(0.8, 0.75, 0.68, 1)
+shader_parameter/haze = 0.0
+shader_parameter/tod_tint = Color(1, 1, 1, 1)
+shader_parameter/lo = 0.1
+shader_parameter/hi = 0.5
+shader_parameter/line_keep = 0.45
+shader_parameter/mip_bias = 0.5
+shader_parameter/blur_px = 1.1
+shader_parameter/opacity = 1.0
+shader_parameter/focus = PackedVector4Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/focus_n = 0
+shader_parameter/zones = PackedVector4Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/zone_n = 0
+shader_parameter/zone_soft = 60.0
+shader_parameter/min_alpha = 0.78
+shader_parameter/defocus_px = 14.0

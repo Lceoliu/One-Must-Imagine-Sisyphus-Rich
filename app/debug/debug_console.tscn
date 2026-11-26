@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://app/debug/debug_console.gd" id="1_i8rs3"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_600.tres" id="2_lkkak"]
+[ext_resource type="Theme" path="res://present/ui/theme.tres" id="3_5w4xq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hapri"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.02, 0.02, 0.03, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.78431374, 0.39215687, 0.16470589, 1)
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(2, 4)
+
+[node name="DebugConsole" type="CanvasLayer"]
+layer = 90
+script = ExtResource("1_i8rs3")
+
+[node name="Fps" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 12.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("2_lkkak")
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(1, 0.8784314, 0.5411765, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.8)
+theme_override_constants/outline_size = 4
+text = "FPS 60"
+
+[node name="Panel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 460.0
+theme = ExtResource("3_5w4xq")
+theme_override_styles/panel = SubResource("StyleBoxFlat_hapri")
+
+[node name="VB" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Log" type="RichTextLabel" parent="Panel/VB"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+theme_override_font_sizes/normal_font_size = 16
+theme_override_colors/default_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+scroll_following = true
+selection_enabled = true
+
+[node name="Line" type="LineEdit" parent="Panel/VB"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+placeholder_text = "输入命令，help 看全部；Esc 关闭"

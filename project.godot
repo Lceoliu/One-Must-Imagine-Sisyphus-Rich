@@ -1,0 +1,87 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Sisyphus"
+config/version="0.1.0"
+run/main_scene="res://app/main.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="Sisyphus"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/bg_color=Color(0.07, 0.05, 0.04, 1)
+boot_splash/show_image=false
+config/icon="res://assets/ui/app_icon.png"
+config/windows_native_icon="res://assets/ui/app_icon.ico"
+
+[audio]
+
+buses/default_bus_layout="res://present/audio/default_bus_layout.tres"
+
+[autoload]
+
+Settings="*res://app/autoload/settings_service.gd"
+Content="*res://app/autoload/content_service.gd"
+LocScenes="*res://app/autoload/loc_scenes.gd"
+SpriteDB="*res://present/core/sprite_db.gd"
+Sfx="*res://present/audio/audio_director.gd"
+Watchdog="*res://app/autoload/watchdog.gd"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=2
+gdscript/warnings/unsafe_property_access=1
+gdscript/warnings/unsafe_method_access=1
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1600
+window/size/window_height_override=900
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="Sisyphus"
+
+[filesystem]
+
+import/fbx2gltf/enabled=false
+import/blender/enabled=false
+
+[importer_defaults]
+
+texture={
+"mipmaps/generate": true
+}
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://i18n/strings.en.translation")
+locale/fallback="zh_CN"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=3
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+
+[shader_globals]
+
+night_k={
+"type": "float",
+"value": 0.0
+}
+night_tint={
+"type": "color",
+"value": Color(0.615686, 0.721569, 0.878431, 1)
+}

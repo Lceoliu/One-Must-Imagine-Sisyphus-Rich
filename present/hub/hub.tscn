@@ -1,0 +1,2628 @@
+[gd_scene load_steps=223 format=3]
+
+[ext_resource type="Script" path="res://present/hub/hub_view.gd" id="1_amx78"]
+[ext_resource type="Script" path="res://present/hub/hub_sky.gd" id="2_faeft"]
+[ext_resource type="Script" path="res://present/hub/hub_parallax.gd" id="3_tmi00"]
+[ext_resource type="Shader" path="res://present/shaders/bg_recolor.gdshader" id="4_fygll"]
+[ext_resource type="Texture2D" path="res://assets/bg/bg_olympus/bg_olympus.png" id="5_jbjm1"]
+[ext_resource type="Texture2D" path="res://assets/bg/bg_range/bg_range.png" id="6_b3ss5"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_bg_ruins/hub_bg_ruins.png" id="7_k2e8n"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_mid_ruins/mr_stoa_stumps.png" id="8_bbbrr"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_mid_ruins/mr_doric_group.png" id="9_3k8cd"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_mid_ruins/mr_temple_corner.png" id="10_tjpbx"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_mid_ruins/mr_pediment.png" id="11_uuptc"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_mid_ruins/mr_ionic_tall.png" id="12_mv7x1"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_mid_ruins/mr_propylon.png" id="13_17qru"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_styx/hub_styx.png" id="14_mx0op"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_gate_open/hub_gate_open.png" id="15_1pkyt"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_props_station/hp_lectern.png" id="16_203q5"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_props_feast/hp_wine_counter.png" id="19_byqsi"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_props_feast/hp_kline.png" id="20_hh6eo"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_props_feast/hp_trapeza.png" id="23_5nkk6"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_props_feast/hp_kline_demeter.png" id="24_mowt5"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_props_feast/hp_throne.png" id="27_kv3ju"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_props_station/hp_kottabos.png" id="31_qq72s"]
+[ext_resource type="Texture2D" path="res://assets/native/bet_stele/bet_stele.png" id="32_g2fab"]
+[ext_resource type="Script" path="res://present/hub/hub_stele.gd" id="33_mypdh"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_props_station/hp_forge_cart.png" id="42_k6wfm"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_props_station/hp_hermes_stall.png" id="43_pxdoj"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_props_station/hp_fire_basin.png" id="47_o16yy"]
+[ext_resource type="Material" path="res://present/hub/mat_unshaded.tres" id="48_bq035"]
+[ext_resource type="SpriteFrames" path="res://present/hub/flame_frames.tres" id="49_mlina"]
+[ext_resource type="Texture2D" path="res://present/core/glow.tres" id="50_35ghy"]
+[ext_resource type="Material" path="res://present/hub/mat_add.tres" id="51_mf7g4"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_props_feast/hp_oil_lamp.png" id="52_gglfi"]
+[ext_resource type="Script" path="res://present/hub/hub_queue.gd" id="53_twioc"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_ghosts/gh_server_tray.png" id="54_k6qac"]
+[ext_resource type="Script" path="res://present/hub/hub_patrol.gd" id="55_q5gti"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_ghosts/gh_server_jug.png" id="56_aayfx"]
+[ext_resource type="Script" path="res://present/hub/hub_helpers.gd" id="57_3ed22"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_fg_ruins/fr_wall_corner.png" id="60_pa6ma"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_fg_ruins/fr_drums_heap.png" id="61_1ryo2"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_fg_ruins/fr_cart_crushed.png" id="62_v83k5"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_fg_ruins/fr_pithos_shattered.png" id="63_vbtxp"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_fg_ruins/fr_statue_fallen.png" id="64_jklsb"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_fg_ruins/fr_fence_flat.png" id="65_vknxe"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_fg_ruins/fr_house_collapsed.png" id="66_ft844"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_fg_ruins/fr_olive_split.png" id="67_3hn16"]
+[ext_resource type="Script" path="res://present/hub/hub_station.gd" id="68_nl2b2"]
+[ext_resource type="Theme" path="res://present/ui/theme.tres" id="69_dgiug"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_700.tres" id="70_ukjqx"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/cinzel_700.tres" id="71_r3vpi"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_600.tres" id="72_ixkmj"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_500.tres" id="73_qd4f3"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_900.tres" id="74_nd3l5"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/thanatos.tscn" id="77_a1mhu"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/dionysus.tscn" id="78_kpu3p"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/ares.tscn" id="83_6f7ks"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/aphrodite.tscn" id="84_yjdk8"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/demeter.tscn" id="89_mwaih"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/gaia.tscn" id="90_gao5y"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/hera.tscn" id="93_k7vbv"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/apollo.tscn" id="94_xuipr"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/athena.tscn" id="95_xwmsj"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/tyche.tscn" id="101_ca516"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/hestia.tscn" id="102_e3jho"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/hades.tscn" id="103_nxk1v"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/persephone.tscn" id="104_j6kve"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/clotho.tscn" id="105_25yus"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/lachesis.tscn" id="106_wwkti"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/atropos.tscn" id="107_mscn8"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/hephaestus.tscn" id="108_aptfy"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/hermes.tscn" id="113_skkxa"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/helios.tscn" id="114_2gs2n"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/chariot.tscn" id="115_od3v1"]
+[ext_resource type="PackedScene" path="res://present/hub/gods/cerberus.tscn" id="127_jddyl"]
+[ext_resource type="PackedScene" path="res://present/actors/sisyphus.tscn" id="128_a1mhu"]
+[ext_resource type="Material" path="res://present/hub/mat_berm.tres" id="e_berm"]
+[ext_resource type="Shader" path="res://present/shaders/bg_recolor_unshaded.gdshader" id="e_bgun"]
+[ext_resource type="Texture2D" path="res://assets/bg/bg_clouds/bg_clouds.png" id="e_clouds"]
+[ext_resource type="Texture2D" path="res://assets/bg/bg_coast/bg_coast.png" id="e_coast"]
+[ext_resource type="Script" path="res://present/hub/hub_far_lamps.gd" id="e_farlamps"]
+[ext_resource type="Material" path="res://present/hub/mat_fg.tres" id="e_fg"]
+[ext_resource type="Material" path="res://present/hub/mat_ground.tres" id="e_ground"]
+[ext_resource type="Material" path="res://present/hub/mat_field.tres" id="e_field"]
+[ext_resource type="Texture2D" path="res://assets/bg/bg_hills/bg_hills.png" id="e_hills"]
+[ext_resource type="Material" path="res://present/hub/mat_lit.tres" id="e_lit"]
+[ext_resource type="Shader" path="res://present/shaders/hub_mist.gdshader" id="e_mist"]
+[ext_resource type="Material" path="res://present/hub/mat_ruins.tres" id="e_ruins"]
+[ext_resource type="Script" path="res://present/hub/hub_shadows.gd" id="e_shadows"]
+[ext_resource type="Script" path="res://present/hub/hub_swing.gd" id="e_swing"]
+[ext_resource type="Shader" path="res://present/shaders/hub_vignette.gdshader" id="e_vig"]
+[ext_resource type="Texture2D" path="res://assets/normals/bet_stele/bet_stele_n.png" id="n_bet_stele"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_field/fd_field_n.png" id="n_fd_field"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_fgheap/fh_amphorae_n.png" id="n_fh_amphorae"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_fgheap/fh_blocks_wheel_n.png" id="n_fh_blocks_wheel"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_fgheap/fh_bricks_horse_n.png" id="n_fh_bricks_horse"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_fgheap/fh_head_n.png" id="n_fh_head"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_fgheap/fh_lintel_n.png" id="n_fh_lintel"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_fgheap/fh_tiles_beams_n.png" id="n_fh_tiles_beams"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_floor/fl_berm_n.png" id="n_fl_berm"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_floor/fl_road_n.png" id="n_fl_road"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_fg_ruins/fr_cart_crushed_n.png" id="n_fr_cart_crushed"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_fg_ruins/fr_drums_heap_n.png" id="n_fr_drums_heap"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_fg_ruins/fr_fence_flat_n.png" id="n_fr_fence_flat"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_fg_ruins/fr_house_collapsed_n.png" id="n_fr_house_collapsed"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_fg_ruins/fr_olive_split_n.png" id="n_fr_olive_split"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_fg_ruins/fr_pithos_shattered_n.png" id="n_fr_pithos_shattered"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_fg_ruins/fr_statue_fallen_n.png" id="n_fr_statue_fallen"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_fg_ruins/fr_wall_corner_n.png" id="n_fr_wall_corner"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_props_station/hp_fire_basin_n.png" id="n_hp_fire_basin"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_props_station/hp_forge_cart_n.png" id="n_hp_forge_cart"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_props_station/hp_hermes_stall_n.png" id="n_hp_hermes_stall"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_props_feast/hp_kline_n.png" id="n_hp_kline"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_props_feast/hp_kline_demeter_n.png" id="n_hp_kline_demeter"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_props_station/hp_kottabos_n.png" id="n_hp_kottabos"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_props_station/hp_lectern_n.png" id="n_hp_lectern"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_props_feast/hp_oil_lamp_n.png" id="n_hp_oil_lamp"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_props_feast/hp_throne_n.png" id="n_hp_throne"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_props_feast/hp_trapeza_n.png" id="n_hp_trapeza"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_props_feast/hp_wine_counter_n.png" id="n_hp_wine_counter"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_gate_open/hub_gate_open_n.png" id="n_hub_gate_open"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_mid_ruins/mr_doric_group_n.png" id="n_mr_doric_group"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_mid_ruins/mr_ionic_tall_n.png" id="n_mr_ionic_tall"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_mid_ruins/mr_pediment_n.png" id="n_mr_pediment"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_mid_ruins/mr_propylon_n.png" id="n_mr_propylon"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_mid_ruins/mr_stoa_stumps_n.png" id="n_mr_stoa_stumps"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_mid_ruins/mr_temple_corner_n.png" id="n_mr_temple_corner"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_rubble/rb_blocks_beam_n.png" id="n_rb_blocks_beam"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_rubble/rb_bricks_beam_n.png" id="n_rb_bricks_beam"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_rubble/rb_drum_buried_n.png" id="n_rb_drum_buried"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_rubble/rb_grain_basket_n.png" id="n_rb_grain_basket"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_rubble/rb_ladder_heap_n.png" id="n_rb_ladder_heap"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_rubble/rb_pots_heap_n.png" id="n_rb_pots_heap"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_rubble/rb_tiles_heap_n.png" id="n_rb_tiles_heap"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_rubble/rb_wall_stub_n.png" id="n_rb_wall_stub"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_field/fd_field.png" id="t_fd_field"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_fgheap/fh_amphorae.png" id="t_fh_amphorae"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_fgheap/fh_blocks_wheel.png" id="t_fh_blocks_wheel"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_fgheap/fh_bricks_horse.png" id="t_fh_bricks_horse"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_fgheap/fh_head.png" id="t_fh_head"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_fgheap/fh_lintel.png" id="t_fh_lintel"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_fgheap/fh_tiles_beams.png" id="t_fh_tiles_beams"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_floor/fl_berm.png" id="t_fl_berm"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_floor/fl_road.png" id="t_fl_road"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_rubble/rb_blocks_beam.png" id="t_rb_blocks_beam"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_rubble/rb_bricks_beam.png" id="t_rb_bricks_beam"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_rubble/rb_drum_buried.png" id="t_rb_drum_buried"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_rubble/rb_grain_basket.png" id="t_rb_grain_basket"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_rubble/rb_ladder_heap.png" id="t_rb_ladder_heap"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_rubble/rb_pots_heap.png" id="t_rb_pots_heap"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_rubble/rb_tiles_heap.png" id="t_rb_tiles_heap"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_rubble/rb_wall_stub.png" id="t_rb_wall_stub"]
+
+[ext_resource type="Shader" path="res://present/shaders/hub_lit_front.gdshader" id="s_litfront"]
+
+[sub_resource type="ShaderMaterial" id="m_olympus"]
+shader = ExtResource("e_bgun")
+shader_parameter/fill_color = Color(0.155098, 0.196863, 0.309608, 1)
+shader_parameter/line_color = Color(0.188627, 0.235686, 0.35549, 1)
+shader_parameter/lo = 0.15
+shader_parameter/hi = 0.75
+shader_parameter/edge = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="m_veil"]
+shader = ExtResource("e_bgun")
+shader_parameter/fill_color = Color(0.172549, 0.211765, 0.321569, 1)
+shader_parameter/line_color = Color(0.235294, 0.282353, 0.4, 1)
+shader_parameter/lo = 0.35
+shader_parameter/hi = 0.85
+shader_parameter/edge = 0.15
+shader_parameter/alpha = 0.9
+
+[sub_resource type="ShaderMaterial" id="m_range"]
+shader = ExtResource("e_bgun")
+shader_parameter/fill_color = Color(0.131373, 0.170784, 0.27451, 1)
+shader_parameter/line_color = Color(0.184902, 0.23451, 0.348431, 1)
+shader_parameter/lo = 0.15
+shader_parameter/hi = 0.75
+shader_parameter/edge = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="m_hills"]
+shader = ExtResource("e_bgun")
+shader_parameter/fill_color = Color(0.100392, 0.131765, 0.218824, 1)
+shader_parameter/line_color = Color(0.166275, 0.213333, 0.322353, 1)
+shader_parameter/lo = 0.15
+shader_parameter/hi = 0.75
+shader_parameter/edge = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="m_coast"]
+shader = ExtResource("e_bgun")
+shader_parameter/fill_color = Color(0.068627, 0.09451, 0.166667, 1)
+shader_parameter/line_color = Color(0.125098, 0.172157, 0.272549, 1)
+shader_parameter/lo = 0.15
+shader_parameter/hi = 0.75
+shader_parameter/edge = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="mm_far"]
+shader = ExtResource("e_mist")
+shader_parameter/tint = Color(0.25, 0.32, 0.5, 0.38)
+shader_parameter/puffs = 34.0
+shader_parameter/drift = 0.04
+shader_parameter/breakup = 0.55
+
+[sub_resource type="Gradient" id="g_mist_far_g"]
+offsets = PackedFloat32Array(0, 0.55, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.35)
+
+[sub_resource type="GradientTexture2D" id="g_mist_far"]
+gradient = SubResource("g_mist_far_g")
+width = 16
+fill_to = Vector2(0, 1)
+
+[sub_resource type="ShaderMaterial" id="m_town"]
+shader = ExtResource("e_bgun")
+shader_parameter/fill_color = Color(0.05, 0.066, 0.118, 1)
+shader_parameter/line_color = Color(0.12, 0.15, 0.225, 1)
+shader_parameter/lo = 0.15
+shader_parameter/hi = 0.75
+shader_parameter/edge = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="mm_town"]
+shader = ExtResource("e_mist")
+shader_parameter/tint = Color(0.23, 0.29, 0.45, 0.42)
+shader_parameter/puffs = 46.0
+shader_parameter/drift = 0.06
+shader_parameter/breakup = 0.6
+
+[sub_resource type="Gradient" id="g_mist_band_g"]
+offsets = PackedFloat32Array(0, 0.6, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="g_mist_band"]
+gradient = SubResource("g_mist_band_g")
+width = 16
+fill_to = Vector2(0, 1)
+
+[sub_resource type="CanvasTexture" id="ct_mr_stoa_stumps"]
+diffuse_texture = ExtResource("8_bbbrr")
+normal_texture = ExtResource("n_mr_stoa_stumps")
+
+[sub_resource type="CanvasTexture" id="ct_mr_doric_group"]
+diffuse_texture = ExtResource("9_3k8cd")
+normal_texture = ExtResource("n_mr_doric_group")
+
+[sub_resource type="CanvasTexture" id="ct_mr_temple_corner"]
+diffuse_texture = ExtResource("10_tjpbx")
+normal_texture = ExtResource("n_mr_temple_corner")
+
+[sub_resource type="CanvasTexture" id="ct_mr_pediment"]
+diffuse_texture = ExtResource("11_uuptc")
+normal_texture = ExtResource("n_mr_pediment")
+
+[sub_resource type="CanvasTexture" id="ct_mr_ionic_tall"]
+diffuse_texture = ExtResource("12_mv7x1")
+normal_texture = ExtResource("n_mr_ionic_tall")
+
+[sub_resource type="CanvasTexture" id="ct_mr_propylon"]
+diffuse_texture = ExtResource("13_17qru")
+normal_texture = ExtResource("n_mr_propylon")
+
+[sub_resource type="ShaderMaterial" id="mm_mid"]
+shader = ExtResource("e_mist")
+shader_parameter/tint = Color(0.22, 0.27, 0.42, 0.4)
+shader_parameter/puffs = 60.0
+shader_parameter/drift = 0.08
+shader_parameter/breakup = 0.65
+
+[sub_resource type="CanvasTexture" id="ct_fl_berm"]
+diffuse_texture = ExtResource("t_fl_berm")
+normal_texture = ExtResource("n_fl_berm")
+
+[sub_resource type="CanvasTexture" id="ct_rb_blocks_beam"]
+diffuse_texture = ExtResource("t_rb_blocks_beam")
+normal_texture = ExtResource("n_rb_blocks_beam")
+
+[sub_resource type="CanvasTexture" id="ct_rb_bricks_beam"]
+diffuse_texture = ExtResource("t_rb_bricks_beam")
+normal_texture = ExtResource("n_rb_bricks_beam")
+
+[sub_resource type="CanvasTexture" id="ct_rb_ladder_heap"]
+diffuse_texture = ExtResource("t_rb_ladder_heap")
+normal_texture = ExtResource("n_rb_ladder_heap")
+
+[sub_resource type="CanvasTexture" id="ct_rb_tiles_heap"]
+diffuse_texture = ExtResource("t_rb_tiles_heap")
+normal_texture = ExtResource("n_rb_tiles_heap")
+
+[sub_resource type="CanvasTexture" id="ct_rb_pots_heap"]
+diffuse_texture = ExtResource("t_rb_pots_heap")
+normal_texture = ExtResource("n_rb_pots_heap")
+
+[sub_resource type="CanvasTexture" id="ct_rb_grain_basket"]
+diffuse_texture = ExtResource("t_rb_grain_basket")
+normal_texture = ExtResource("n_rb_grain_basket")
+
+[sub_resource type="CanvasTexture" id="ct_rb_wall_stub"]
+diffuse_texture = ExtResource("t_rb_wall_stub")
+normal_texture = ExtResource("n_rb_wall_stub")
+
+[sub_resource type="CanvasTexture" id="ct_rb_drum_buried"]
+diffuse_texture = ExtResource("t_rb_drum_buried")
+normal_texture = ExtResource("n_rb_drum_buried")
+
+[sub_resource type="ShaderMaterial" id="mm_ground"]
+shader = ExtResource("e_mist")
+shader_parameter/tint = Color(0.27, 0.31, 0.45, 0.42)
+shader_parameter/puffs = 80.0
+shader_parameter/drift = 0.1
+shader_parameter/breakup = 0.7
+
+[sub_resource type="Gradient" id="g_mist_low_g"]
+offsets = PackedFloat32Array(0, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.6)
+
+[sub_resource type="GradientTexture2D" id="g_mist_low"]
+gradient = SubResource("g_mist_low_g")
+width = 16
+fill_to = Vector2(0, 1)
+
+[sub_resource type="CanvasTexture" id="ct_fl_road"]
+diffuse_texture = ExtResource("t_fl_road")
+normal_texture = ExtResource("n_fl_road")
+
+[sub_resource type="CanvasTexture" id="ct_fd_field"]
+diffuse_texture = ExtResource("t_fd_field")
+normal_texture = ExtResource("n_fd_field")
+
+[sub_resource type="CanvasTexture" id="ct_fr_wall_corner"]
+diffuse_texture = ExtResource("60_pa6ma")
+normal_texture = ExtResource("n_fr_wall_corner")
+
+[sub_resource type="CanvasTexture" id="ct_fr_cart_crushed"]
+diffuse_texture = ExtResource("62_v83k5")
+normal_texture = ExtResource("n_fr_cart_crushed")
+
+[sub_resource type="CanvasTexture" id="ct_fr_pithos_shattered"]
+diffuse_texture = ExtResource("63_vbtxp")
+normal_texture = ExtResource("n_fr_pithos_shattered")
+
+[sub_resource type="CanvasTexture" id="ct_fr_statue_fallen"]
+diffuse_texture = ExtResource("64_jklsb")
+normal_texture = ExtResource("n_fr_statue_fallen")
+
+[sub_resource type="CanvasTexture" id="ct_fr_fence_flat"]
+diffuse_texture = ExtResource("65_vknxe")
+normal_texture = ExtResource("n_fr_fence_flat")
+
+[sub_resource type="CanvasTexture" id="ct_fr_house_collapsed"]
+diffuse_texture = ExtResource("66_ft844")
+normal_texture = ExtResource("n_fr_house_collapsed")
+
+[sub_resource type="CanvasTexture" id="ct_fr_olive_split"]
+diffuse_texture = ExtResource("67_3hn16")
+normal_texture = ExtResource("n_fr_olive_split")
+
+[sub_resource type="CanvasTexture" id="ct_fr_drums_heap"]
+diffuse_texture = ExtResource("61_1ryo2")
+normal_texture = ExtResource("n_fr_drums_heap")
+
+[sub_resource type="Gradient" id="Gradient_mwaih"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 0.85, 0.5, 1, 1, 0.5, 0.15, 0.75, 1, 0.35, 0.1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yjdk8"]
+shader = ExtResource("4_fygll")
+shader_parameter/fill_color = Color(0.039215688, 0.0627451, 0.1254902, 1)
+shader_parameter/line_color = Color(0.5882353, 0.7058824, 0.92156863, 1)
+shader_parameter/lo = null
+shader_parameter/hi = null
+shader_parameter/edge = null
+shader_parameter/mask_lo = null
+shader_parameter/mask_hi = null
+shader_parameter/alpha = null
+
+[sub_resource type="CanvasTexture" id="ct_hub_gate_open"]
+diffuse_texture = ExtResource("15_1pkyt")
+normal_texture = ExtResource("n_hub_gate_open")
+
+[sub_resource type="CanvasTexture" id="ct_hp_lectern"]
+diffuse_texture = ExtResource("16_203q5")
+normal_texture = ExtResource("n_hp_lectern")
+
+[sub_resource type="CanvasTexture" id="ct_hp_wine_counter"]
+diffuse_texture = ExtResource("19_byqsi")
+normal_texture = ExtResource("n_hp_wine_counter")
+
+[sub_resource type="CanvasTexture" id="ct_hp_kline"]
+diffuse_texture = ExtResource("20_hh6eo")
+normal_texture = ExtResource("n_hp_kline")
+
+[sub_resource type="CanvasTexture" id="ct_hp_trapeza"]
+diffuse_texture = ExtResource("23_5nkk6")
+normal_texture = ExtResource("n_hp_trapeza")
+
+[sub_resource type="CanvasTexture" id="ct_hp_kline_demeter"]
+diffuse_texture = ExtResource("24_mowt5")
+normal_texture = ExtResource("n_hp_kline_demeter")
+
+[sub_resource type="CanvasTexture" id="ct_hp_throne"]
+diffuse_texture = ExtResource("27_kv3ju")
+normal_texture = ExtResource("n_hp_throne")
+
+[sub_resource type="CanvasTexture" id="ct_hp_kottabos"]
+diffuse_texture = ExtResource("31_qq72s")
+normal_texture = ExtResource("n_hp_kottabos")
+
+[sub_resource type="CanvasTexture" id="ct_bet_stele"]
+diffuse_texture = ExtResource("32_g2fab")
+normal_texture = ExtResource("n_bet_stele")
+
+[sub_resource type="CanvasTexture" id="ct_hp_forge_cart"]
+diffuse_texture = ExtResource("42_k6wfm")
+normal_texture = ExtResource("n_hp_forge_cart")
+
+[sub_resource type="CanvasTexture" id="ct_hp_hermes_stall"]
+diffuse_texture = ExtResource("43_pxdoj")
+normal_texture = ExtResource("n_hp_hermes_stall")
+
+[sub_resource type="CanvasTexture" id="ct_hp_fire_basin"]
+diffuse_texture = ExtResource("47_o16yy")
+normal_texture = ExtResource("n_hp_fire_basin")
+
+[sub_resource type="Curve" id="c_smoke"]
+_data = [Vector2(0, 0.45), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="g_smoke"]
+offsets = PackedFloat32Array(0, 0.25, 1)
+colors = PackedColorArray(0.5, 0.47, 0.45, 0, 0.5, 0.47, 0.45, 0.16, 0.42, 0.42, 0.46, 0)
+
+[sub_resource type="Gradient" id="Gradient_gao5y"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 0.85, 0.5, 1, 1, 0.5, 0.15, 0.75, 1, 0.35, 0.1, 0)
+
+[sub_resource type="Gradient" id="Gradient_k7vbv"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 0.85, 0.5, 1, 1, 0.5, 0.15, 0.75, 1, 0.35, 0.1, 0)
+
+[sub_resource type="CanvasTexture" id="ct_hp_oil_lamp"]
+diffuse_texture = ExtResource("52_gglfi")
+normal_texture = ExtResource("n_hp_oil_lamp")
+
+[sub_resource type="Gradient" id="Gradient_xuipr"]
+colors = PackedColorArray(1, 0.9, 0.55, 1, 1, 0.45, 0.1, 0)
+
+[sub_resource type="ShaderMaterial" id="mm_front"]
+shader = ExtResource("e_mist")
+shader_parameter/tint = Color(0.16, 0.19, 0.3, 0.2)
+shader_parameter/puffs = 70.0
+shader_parameter/drift = 0.12
+shader_parameter/breakup = 0.7
+
+[sub_resource type="CanvasTexture" id="ct_fh_blocks_wheel"]
+diffuse_texture = ExtResource("t_fh_blocks_wheel")
+normal_texture = ExtResource("n_fh_blocks_wheel")
+
+[sub_resource type="CanvasTexture" id="ct_fh_tiles_beams"]
+diffuse_texture = ExtResource("t_fh_tiles_beams")
+normal_texture = ExtResource("n_fh_tiles_beams")
+
+[sub_resource type="CanvasTexture" id="ct_fh_amphorae"]
+diffuse_texture = ExtResource("t_fh_amphorae")
+normal_texture = ExtResource("n_fh_amphorae")
+
+[sub_resource type="CanvasTexture" id="ct_fh_lintel"]
+diffuse_texture = ExtResource("t_fh_lintel")
+normal_texture = ExtResource("n_fh_lintel")
+
+[sub_resource type="CanvasTexture" id="ct_fh_bricks_horse"]
+diffuse_texture = ExtResource("t_fh_bricks_horse")
+normal_texture = ExtResource("n_fh_bricks_horse")
+
+[sub_resource type="CanvasTexture" id="ct_fh_head"]
+diffuse_texture = ExtResource("t_fh_head")
+normal_texture = ExtResource("n_fh_head")
+
+[sub_resource type="ShaderMaterial" id="m_vignette"]
+shader = ExtResource("e_vig")
+shader_parameter/tint = Color(0.01, 0.012, 0.03, 1)
+shader_parameter/strength = 0.55
+shader_parameter/inner = 0.45
+shader_parameter/bottom = 0.12
+shader_parameter/bottom_strength = 0.35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ca516"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.11764706, 0.078431375, 0.05882353, 0.88)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.78431374, 0.39215687, 0.16470589, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="Gradient" id="g_aura_g"]
+offsets = PackedFloat32Array(0, 0.45, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.7, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="g_aura"]
+gradient = SubResource("g_aura_g")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="ShaderMaterial" id="m_litfront"]
+shader = ExtResource("s_litfront")
+shader_parameter/rim_c = Vector2(0.5, 0.035)
+shader_parameter/rim_r = Vector2(0.49, 0.03)
+shader_parameter/rim_drop = 0.004
+
+[node name="Hub" type="Node2D"]
+script = ExtResource("1_amx78")
+
+[node name="SkyLayer" type="CanvasLayer" parent="."]
+layer = -9
+
+[node name="Sky" type="Node2D" parent="SkyLayer"]
+script = ExtResource("2_faeft")
+
+[node name="Ambient" type="CanvasModulate" parent="."]
+color = Color(0.48, 0.56, 0.82, 1)
+
+[node name="Far" type="Node2D" parent="."]
+z_index = -20
+script = ExtResource("3_tmi00")
+factor = 0.06
+
+[node name="Olympus" type="Sprite2D" parent="Far"]
+material = SubResource("m_olympus")
+position = Vector2(4620, 1123.2)
+scale = Vector2(0.7382812, 0.7382812)
+texture = ExtResource("5_jbjm1")
+offset = Vector2(0, -768)
+
+[node name="Veil" type="Sprite2D" parent="Far"]
+texture_repeat = 3
+material = SubResource("m_veil")
+position = Vector2(-6546.3, -60.5)
+scale = Vector2(0.4698895, 0.4698895)
+texture = ExtResource("e_clouds")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 52128, 610)
+
+[node name="FarRange" type="Node2D" parent="."]
+z_index = -19
+script = ExtResource("3_tmi00")
+factor = 0.1
+
+[node name="bg_range" type="Sprite2D" parent="FarRange"]
+texture_repeat = 3
+material = SubResource("m_range")
+position = Vector2(-2200, 302.4)
+scale = Vector2(0.7888696, 0.7888696)
+texture = ExtResource("6_b3ss5")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 20535.71, 575)
+
+[node name="Fill" type="Polygon2D" parent="FarRange"]
+material = ExtResource("48_bq035")
+color = Color(0.131373, 0.170784, 0.27451, 1)
+polygon = PackedVector2Array(-2200, 754, 14000, 754, 14000, 1200, -2200, 1200)
+
+[node name="FarHills" type="Node2D" parent="."]
+z_index = -18
+script = ExtResource("3_tmi00")
+factor = 0.15
+
+[node name="bg_hills" type="Sprite2D" parent="FarHills"]
+texture_repeat = 3
+material = SubResource("m_hills")
+position = Vector2(-2200, 367.2)
+scale = Vector2(0.8605578, 0.8605578)
+texture = ExtResource("e_hills")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 18825, 502)
+
+[node name="Lamps" type="Node2D" parent="FarHills/bg_hills"]
+material = ExtResource("48_bq035")
+script = ExtResource("e_farlamps")
+
+[node name="Fill" type="Polygon2D" parent="FarHills"]
+material = ExtResource("48_bq035")
+color = Color(0.100392, 0.131765, 0.218824, 1)
+polygon = PackedVector2Array(-2200, 797.2, 14000, 797.2, 14000, 1200, -2200, 1200)
+
+[node name="FarCoast" type="Node2D" parent="."]
+z_index = -17
+script = ExtResource("3_tmi00")
+factor = 0.21
+
+[node name="bg_coast" type="Sprite2D" parent="FarCoast"]
+texture_repeat = 3
+material = SubResource("m_coast")
+position = Vector2(-2200, 475.2)
+scale = Vector2(1.069307, 1.069307)
+texture = ExtResource("e_coast")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 15150, 404)
+
+[node name="Lamps" type="Node2D" parent="FarCoast/bg_coast"]
+material = ExtResource("48_bq035")
+script = ExtResource("e_farlamps")
+fishing = 3
+seed_value = 71
+
+[node name="Fill" type="Polygon2D" parent="FarCoast"]
+material = ExtResource("48_bq035")
+color = Color(0.068627, 0.09451, 0.166667, 1)
+polygon = PackedVector2Array(-2200, 905.2, 14000, 905.2, 14000, 1200, -2200, 1200)
+
+[node name="Mist" type="Sprite2D" parent="FarCoast"]
+material = SubResource("mm_far")
+position = Vector2(6000, 700)
+scale = Vector2(1500, 4.375)
+texture = SubResource("g_mist_far")
+
+[node name="Strip2" type="Node2D" parent="."]
+z_index = -16
+script = ExtResource("3_tmi00")
+factor = 0.45
+
+[node name="hub_bg_ruins" type="Sprite2D" parent="Strip2"]
+texture_repeat = 3
+material = SubResource("m_town")
+position = Vector2(-4000, 530)
+scale = Vector2(0.6860707, 0.6860707)
+texture = ExtResource("7_k2e8n")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 12987, 481)
+
+[node name="Mist" type="Sprite2D" parent="Strip2"]
+z_index = 1
+material = SubResource("mm_town")
+position = Vector2(6000, 800)
+scale = Vector2(1500, 3.125)
+texture = SubResource("g_mist_band")
+
+[node name="Mid" type="Node2D" parent="."]
+z_index = -12
+modulate = Color(0.74, 0.76, 0.84, 1)
+script = ExtResource("3_tmi00")
+factor = 0.8
+
+[node name="mr_stoa_stumps" type="Sprite2D" parent="Mid"]
+light_mask = 3
+material = ExtResource("e_ruins")
+position = Vector2(1340, 850)
+scale = Vector2(1.4864864, 1.4864864)
+texture = SubResource("ct_mr_stoa_stumps")
+offset = Vector2(0, -111)
+
+[node name="mr_doric_group" type="Sprite2D" parent="Mid"]
+light_mask = 3
+material = ExtResource("e_ruins")
+position = Vector2(3950, 850)
+scale = Vector2(1.296758, 1.296758)
+texture = SubResource("ct_mr_doric_group")
+offset = Vector2(0, -200.5)
+
+[node name="mr_temple_corner" type="Sprite2D" parent="Mid"]
+light_mask = 3
+material = ExtResource("e_ruins")
+position = Vector2(4620, 850)
+scale = Vector2(1.2641083, 1.2641083)
+texture = SubResource("ct_mr_temple_corner")
+offset = Vector2(0, -221.5)
+
+[node name="mr_pediment" type="Sprite2D" parent="Mid"]
+light_mask = 3
+material = ExtResource("e_ruins")
+position = Vector2(6140, 850)
+scale = Vector2(1.3043479, 1.3043479)
+texture = SubResource("ct_mr_pediment")
+offset = Vector2(0, -115)
+
+[node name="mr_propylon" type="Sprite2D" parent="Mid"]
+light_mask = 3
+material = ExtResource("e_ruins")
+position = Vector2(10270, 850)
+scale = Vector2(1.2351544, 1.2351544)
+texture = SubResource("ct_mr_propylon")
+offset = Vector2(0, -210.5)
+
+[node name="Mist" type="Sprite2D" parent="Mid"]
+z_index = 1
+material = SubResource("mm_mid")
+position = Vector2(6000, 805)
+scale = Vector2(1500, 2.34375)
+texture = SubResource("g_mist_band")
+
+[node name="Berm" type="Node2D" parent="."]
+z_index = -11
+script = ExtResource("3_tmi00")
+factor = 0.93
+
+[node name="fl_berm" type="Sprite2D" parent="Berm"]
+light_mask = 7
+texture_repeat = 3
+material = ExtResource("e_berm")
+position = Vector2(-2200, 752)
+scale = Vector2(0.5380117, 0.5380117)
+texture = SubResource("ct_fl_berm")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 30110.87, 171)
+
+[node name="rb_blocks_beam0" type="Sprite2D" parent="Berm"]
+light_mask = 7
+material = ExtResource("e_ground")
+position = Vector2(180, 846)
+scale = Vector2(0.72, 0.72)
+texture = SubResource("ct_rb_blocks_beam")
+offset = Vector2(0, -66)
+
+[node name="rb_bricks_beam1" type="Sprite2D" parent="Berm"]
+light_mask = 7
+material = ExtResource("e_ground")
+position = Vector2(1180, 846)
+scale = Vector2(0.62, 0.62)
+texture = SubResource("ct_rb_bricks_beam")
+offset = Vector2(0, -61.5)
+flip_h = true
+
+[node name="rb_ladder_heap2" type="Sprite2D" parent="Berm"]
+light_mask = 7
+material = ExtResource("e_ground")
+position = Vector2(2080, 846)
+scale = Vector2(0.8, 0.8)
+texture = SubResource("ct_rb_ladder_heap")
+offset = Vector2(0, -64)
+
+[node name="rb_tiles_heap3" type="Sprite2D" parent="Berm"]
+light_mask = 7
+material = ExtResource("e_ground")
+position = Vector2(3260, 846)
+scale = Vector2(0.68, 0.68)
+texture = SubResource("ct_rb_tiles_heap")
+offset = Vector2(0, -52.5)
+flip_h = true
+
+[node name="rb_pots_heap4" type="Sprite2D" parent="Berm"]
+light_mask = 7
+material = ExtResource("e_ground")
+position = Vector2(3980, 846)
+scale = Vector2(0.75, 0.75)
+texture = SubResource("ct_rb_pots_heap")
+offset = Vector2(0, -66)
+
+[node name="rb_grain_basket5" type="Sprite2D" parent="Berm"]
+light_mask = 7
+material = ExtResource("e_ground")
+position = Vector2(4900, 846)
+scale = Vector2(0.72, 0.72)
+texture = SubResource("ct_rb_grain_basket")
+offset = Vector2(0, -64)
+flip_h = true
+
+[node name="rb_wall_stub6" type="Sprite2D" parent="Berm"]
+light_mask = 7
+material = ExtResource("e_ground")
+position = Vector2(5560, 846)
+scale = Vector2(0.62, 0.62)
+texture = SubResource("ct_rb_wall_stub")
+offset = Vector2(0, -61.5)
+
+[node name="rb_drum_buried7" type="Sprite2D" parent="Berm"]
+light_mask = 7
+material = ExtResource("e_ground")
+position = Vector2(6280, 846)
+scale = Vector2(0.8, 0.8)
+texture = SubResource("ct_rb_drum_buried")
+offset = Vector2(0, -68)
+flip_h = true
+
+[node name="rb_blocks_beam8" type="Sprite2D" parent="Berm"]
+light_mask = 7
+material = ExtResource("e_ground")
+position = Vector2(7120, 846)
+scale = Vector2(0.68, 0.68)
+texture = SubResource("ct_rb_blocks_beam")
+offset = Vector2(0, -66)
+
+[node name="rb_bricks_beam9" type="Sprite2D" parent="Berm"]
+light_mask = 7
+material = ExtResource("e_ground")
+position = Vector2(7860, 846)
+scale = Vector2(0.75, 0.75)
+texture = SubResource("ct_rb_bricks_beam")
+offset = Vector2(0, -61.5)
+flip_h = true
+
+[node name="rb_ladder_heap10" type="Sprite2D" parent="Berm"]
+light_mask = 7
+material = ExtResource("e_ground")
+position = Vector2(8620, 846)
+scale = Vector2(0.72, 0.72)
+texture = SubResource("ct_rb_ladder_heap")
+offset = Vector2(0, -64)
+
+[node name="rb_tiles_heap11" type="Sprite2D" parent="Berm"]
+light_mask = 7
+material = ExtResource("e_ground")
+position = Vector2(9420, 846)
+scale = Vector2(0.62, 0.62)
+texture = SubResource("ct_rb_tiles_heap")
+offset = Vector2(0, -52.5)
+flip_h = true
+
+[node name="rb_pots_heap12" type="Sprite2D" parent="Berm"]
+light_mask = 7
+material = ExtResource("e_ground")
+position = Vector2(10150, 846)
+scale = Vector2(0.8, 0.8)
+texture = SubResource("ct_rb_pots_heap")
+offset = Vector2(0, -66)
+
+[node name="rb_grain_basket13" type="Sprite2D" parent="Berm"]
+light_mask = 7
+material = ExtResource("e_ground")
+position = Vector2(10950, 846)
+scale = Vector2(0.68, 0.68)
+texture = SubResource("ct_rb_grain_basket")
+offset = Vector2(0, -64)
+flip_h = true
+
+[node name="rb_wall_stub14" type="Sprite2D" parent="Berm"]
+light_mask = 7
+material = ExtResource("e_ground")
+position = Vector2(11700, 846)
+scale = Vector2(0.75, 0.75)
+texture = SubResource("ct_rb_wall_stub")
+offset = Vector2(0, -61.5)
+
+[node name="GroundMist" type="Sprite2D" parent="Berm"]
+material = SubResource("mm_ground")
+position = Vector2(6000, 805)
+scale = Vector2(1500, 2.03125)
+texture = SubResource("g_mist_low")
+
+[node name="Ground" type="Node2D" parent="."]
+z_index = -10
+
+[node name="Under" type="Polygon2D" parent="Ground"]
+material = ExtResource("e_ground")
+color = Color(0.11, 0.095, 0.085, 1)
+polygon = PackedVector2Array(-2200, 880, 14000, 880, 14000, 1200, -2200, 1200)
+
+[node name="Road" type="Sprite2D" parent="Ground"]
+light_mask = 7
+texture_repeat = 3
+material = ExtResource("e_ground")
+position = Vector2(-2200, 816)
+scale = Vector2(0.5423729, 0.5423729)
+texture = SubResource("ct_fl_road")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 29868.75, 177)
+
+[node name="Field" type="Node2D" parent="."]
+z_index = -9
+script = ExtResource("3_tmi00")
+factor = 1.08
+
+[node name="fd_field" type="Sprite2D" parent="Field"]
+light_mask = 7
+texture_repeat = 3
+material = ExtResource("e_field")
+position = Vector2(-2200, 884)
+scale = Vector2(0.7235495, 0.7235495)
+texture = SubResource("ct_fd_field")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 22389.62, 293)
+
+[node name="fr_wall_corner" type="Sprite2D" parent="Field"]
+light_mask = 7
+material = ExtResource("e_field")
+position = Vector2(1180, 1030)
+scale = Vector2(0.55, 0.55)
+texture = SubResource("ct_fr_wall_corner")
+offset = Vector2(0, -128)
+
+[node name="fr_cart_crushed" type="Sprite2D" parent="Field"]
+visible = false
+light_mask = 7
+material = ExtResource("e_field")
+position = Vector2(2620, 1052)
+scale = Vector2(0.6, 0.6)
+texture = SubResource("ct_fr_cart_crushed")
+offset = Vector2(0, -119)
+
+[node name="fr_pithos_shattered" type="Sprite2D" parent="Field"]
+light_mask = 7
+material = ExtResource("e_field")
+position = Vector2(3260, 1045)
+scale = Vector2(0.52, 0.52)
+texture = SubResource("ct_fr_pithos_shattered")
+offset = Vector2(0, -108.5)
+flip_h = true
+
+[node name="fr_statue_fallen" type="Sprite2D" parent="Field"]
+light_mask = 7
+material = ExtResource("e_field")
+position = Vector2(4880, 1048)
+scale = Vector2(0.62, 0.62)
+texture = SubResource("ct_fr_statue_fallen")
+offset = Vector2(0, -83)
+
+[node name="fr_fence_flat" type="Sprite2D" parent="Field"]
+visible = false
+light_mask = 7
+material = ExtResource("e_field")
+position = Vector2(5980, 1040)
+scale = Vector2(0.58, 0.58)
+texture = SubResource("ct_fr_fence_flat")
+offset = Vector2(0, -84)
+
+[node name="fr_house_collapsed" type="Sprite2D" parent="Field"]
+light_mask = 7
+material = ExtResource("e_field")
+position = Vector2(7380, 1036)
+scale = Vector2(0.56, 0.56)
+texture = SubResource("ct_fr_house_collapsed")
+offset = Vector2(0, -126.5)
+
+[node name="fr_olive_split" type="Sprite2D" parent="Field"]
+light_mask = 7
+material = ExtResource("e_field")
+position = Vector2(8540, 1044)
+scale = Vector2(0.6, 0.6)
+texture = SubResource("ct_fr_olive_split")
+offset = Vector2(0, -105)
+flip_h = true
+
+[node name="fr_drums_heap" type="Sprite2D" parent="Field"]
+visible = false
+light_mask = 7
+material = ExtResource("e_field")
+position = Vector2(9640, 1050)
+scale = Vector2(0.6, 0.6)
+texture = SubResource("ct_fr_drums_heap")
+offset = Vector2(0, -93)
+
+[node name="fr_wall_corner2" type="Sprite2D" parent="Field"]
+light_mask = 7
+material = ExtResource("e_field")
+position = Vector2(10480, 1032)
+scale = Vector2(0.52, 0.52)
+texture = SubResource("ct_fr_wall_corner")
+offset = Vector2(0, -128)
+flip_h = true
+
+[node name="fr_house_collapsed2" type="Sprite2D" parent="Field"]
+visible = false
+light_mask = 7
+material = ExtResource("e_field")
+position = Vector2(11500, 1036)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("ct_fr_house_collapsed")
+offset = Vector2(0, -126.5)
+flip_h = true
+
+[node name="Ember1" type="Node2D" parent="Field"]
+position = Vector2(330, 955)
+
+[node name="Light" type="PointLight2D" parent="Field/Ember1" groups=["hub_flicker"]]
+scale = Vector2(1, 0.5)
+color = Color(1, 0.46, 0.16, 1)
+energy = 1.73
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 5.0
+
+[node name="Halo" type="Sprite2D" parent="Field/Ember1/Light"]
+modulate = Color(1, 0.42, 0.12, 0.55)
+material = ExtResource("51_mf7g4")
+scale = Vector2(1.3, 0.6)
+texture = ExtResource("50_35ghy")
+
+[node name="Sparks" type="CPUParticles2D" parent="Field/Ember1"]
+material = ExtResource("51_mf7g4")
+amount = 5
+lifetime = 2.2
+preprocess = 2.2
+emission_shape = 3
+emission_rect_extents = Vector2(28, 4)
+direction = Vector2(0, -1)
+spread = 25.0
+gravity = Vector2(4, -10)
+initial_velocity_min = 12.0
+initial_velocity_max = 34.0
+scale_amount_min = 1.5
+scale_amount_max = 2.5
+color_ramp = SubResource("Gradient_mwaih")
+
+[node name="Ember2" type="Node2D" parent="Field"]
+position = Vector2(1560, 930)
+
+[node name="Light" type="PointLight2D" parent="Field/Ember2" groups=["hub_flicker"]]
+scale = Vector2(1, 0.5)
+color = Color(1, 0.46, 0.16, 1)
+energy = 1.95
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 5.0
+
+[node name="Halo" type="Sprite2D" parent="Field/Ember2/Light"]
+modulate = Color(1, 0.42, 0.12, 0.55)
+material = ExtResource("51_mf7g4")
+scale = Vector2(1.3, 0.6)
+texture = ExtResource("50_35ghy")
+
+[node name="Sparks" type="CPUParticles2D" parent="Field/Ember2"]
+material = ExtResource("51_mf7g4")
+amount = 5
+lifetime = 2.2
+preprocess = 2.2
+emission_shape = 3
+emission_rect_extents = Vector2(28, 4)
+direction = Vector2(0, -1)
+spread = 25.0
+gravity = Vector2(4, -10)
+initial_velocity_min = 12.0
+initial_velocity_max = 34.0
+scale_amount_min = 1.5
+scale_amount_max = 2.5
+color_ramp = SubResource("Gradient_mwaih")
+
+[node name="Ember3" type="Node2D" parent="Field"]
+position = Vector2(2240, 990)
+
+[node name="Light" type="PointLight2D" parent="Field/Ember3" groups=["hub_flicker"]]
+scale = Vector2(1, 0.5)
+color = Color(1, 0.46, 0.16, 1)
+energy = 1.53
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 5.0
+
+[node name="Halo" type="Sprite2D" parent="Field/Ember3/Light"]
+modulate = Color(1, 0.42, 0.12, 0.55)
+material = ExtResource("51_mf7g4")
+scale = Vector2(1.3, 0.6)
+texture = ExtResource("50_35ghy")
+
+[node name="Sparks" type="CPUParticles2D" parent="Field/Ember3"]
+material = ExtResource("51_mf7g4")
+amount = 5
+lifetime = 2.2
+preprocess = 2.2
+emission_shape = 3
+emission_rect_extents = Vector2(28, 4)
+direction = Vector2(0, -1)
+spread = 25.0
+gravity = Vector2(4, -10)
+initial_velocity_min = 12.0
+initial_velocity_max = 34.0
+scale_amount_min = 1.5
+scale_amount_max = 2.5
+color_ramp = SubResource("Gradient_mwaih")
+
+[node name="Ember4" type="Node2D" parent="Field"]
+position = Vector2(3330, 945)
+
+[node name="Light" type="PointLight2D" parent="Field/Ember4" groups=["hub_flicker"]]
+scale = Vector2(1, 0.5)
+color = Color(1, 0.46, 0.16, 1)
+energy = 1.73
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 5.0
+
+[node name="Halo" type="Sprite2D" parent="Field/Ember4/Light"]
+modulate = Color(1, 0.42, 0.12, 0.55)
+material = ExtResource("51_mf7g4")
+scale = Vector2(1.3, 0.6)
+texture = ExtResource("50_35ghy")
+
+[node name="Sparks" type="CPUParticles2D" parent="Field/Ember4"]
+material = ExtResource("51_mf7g4")
+amount = 5
+lifetime = 2.2
+preprocess = 2.2
+emission_shape = 3
+emission_rect_extents = Vector2(28, 4)
+direction = Vector2(0, -1)
+spread = 25.0
+gravity = Vector2(4, -10)
+initial_velocity_min = 12.0
+initial_velocity_max = 34.0
+scale_amount_min = 1.5
+scale_amount_max = 2.5
+color_ramp = SubResource("Gradient_mwaih")
+
+[node name="Ember5" type="Node2D" parent="Field"]
+position = Vector2(4520, 975)
+
+[node name="Light" type="PointLight2D" parent="Field/Ember5" groups=["hub_flicker"]]
+scale = Vector2(1, 0.5)
+color = Color(1, 0.46, 0.16, 1)
+energy = 1.95
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 5.0
+
+[node name="Halo" type="Sprite2D" parent="Field/Ember5/Light"]
+modulate = Color(1, 0.42, 0.12, 0.55)
+material = ExtResource("51_mf7g4")
+scale = Vector2(1.3, 0.6)
+texture = ExtResource("50_35ghy")
+
+[node name="Sparks" type="CPUParticles2D" parent="Field/Ember5"]
+material = ExtResource("51_mf7g4")
+amount = 5
+lifetime = 2.2
+preprocess = 2.2
+emission_shape = 3
+emission_rect_extents = Vector2(28, 4)
+direction = Vector2(0, -1)
+spread = 25.0
+gravity = Vector2(4, -10)
+initial_velocity_min = 12.0
+initial_velocity_max = 34.0
+scale_amount_min = 1.5
+scale_amount_max = 2.5
+color_ramp = SubResource("Gradient_mwaih")
+
+[node name="Ember6" type="Node2D" parent="Field"]
+position = Vector2(5300, 923)
+
+[node name="Light" type="PointLight2D" parent="Field/Ember6" groups=["hub_flicker"]]
+scale = Vector2(1, 0.5)
+color = Color(1, 0.46, 0.16, 1)
+energy = 1.53
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 5.0
+
+[node name="Halo" type="Sprite2D" parent="Field/Ember6/Light"]
+modulate = Color(1, 0.42, 0.12, 0.55)
+material = ExtResource("51_mf7g4")
+scale = Vector2(1.3, 0.6)
+texture = ExtResource("50_35ghy")
+
+[node name="Sparks" type="CPUParticles2D" parent="Field/Ember6"]
+material = ExtResource("51_mf7g4")
+amount = 5
+lifetime = 2.2
+preprocess = 2.2
+emission_shape = 3
+emission_rect_extents = Vector2(28, 4)
+direction = Vector2(0, -1)
+spread = 25.0
+gravity = Vector2(4, -10)
+initial_velocity_min = 12.0
+initial_velocity_max = 34.0
+scale_amount_min = 1.5
+scale_amount_max = 2.5
+color_ramp = SubResource("Gradient_mwaih")
+
+[node name="Ember7" type="Node2D" parent="Field"]
+position = Vector2(7980, 955)
+
+[node name="Light" type="PointLight2D" parent="Field/Ember7" groups=["hub_flicker"]]
+scale = Vector2(1, 0.5)
+color = Color(1, 0.46, 0.16, 1)
+energy = 1.73
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 5.0
+
+[node name="Halo" type="Sprite2D" parent="Field/Ember7/Light"]
+modulate = Color(1, 0.42, 0.12, 0.55)
+material = ExtResource("51_mf7g4")
+scale = Vector2(1.3, 0.6)
+texture = ExtResource("50_35ghy")
+
+[node name="Sparks" type="CPUParticles2D" parent="Field/Ember7"]
+material = ExtResource("51_mf7g4")
+amount = 5
+lifetime = 2.2
+preprocess = 2.2
+emission_shape = 3
+emission_rect_extents = Vector2(28, 4)
+direction = Vector2(0, -1)
+spread = 25.0
+gravity = Vector2(4, -10)
+initial_velocity_min = 12.0
+initial_velocity_max = 34.0
+scale_amount_min = 1.5
+scale_amount_max = 2.5
+color_ramp = SubResource("Gradient_mwaih")
+
+[node name="Ember8" type="Node2D" parent="Field"]
+position = Vector2(9320, 985)
+
+[node name="Light" type="PointLight2D" parent="Field/Ember8" groups=["hub_flicker"]]
+scale = Vector2(1, 0.5)
+color = Color(1, 0.46, 0.16, 1)
+energy = 1.95
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 5.0
+
+[node name="Halo" type="Sprite2D" parent="Field/Ember8/Light"]
+modulate = Color(1, 0.42, 0.12, 0.55)
+material = ExtResource("51_mf7g4")
+scale = Vector2(1.3, 0.6)
+texture = ExtResource("50_35ghy")
+
+[node name="Sparks" type="CPUParticles2D" parent="Field/Ember8"]
+material = ExtResource("51_mf7g4")
+amount = 5
+lifetime = 2.2
+preprocess = 2.2
+emission_shape = 3
+emission_rect_extents = Vector2(28, 4)
+direction = Vector2(0, -1)
+spread = 25.0
+gravity = Vector2(4, -10)
+initial_velocity_min = 12.0
+initial_velocity_max = 34.0
+scale_amount_min = 1.5
+scale_amount_max = 2.5
+color_ramp = SubResource("Gradient_mwaih")
+
+[node name="Ember9" type="Node2D" parent="Field"]
+position = Vector2(10180, 940)
+
+[node name="Light" type="PointLight2D" parent="Field/Ember9" groups=["hub_flicker"]]
+scale = Vector2(1, 0.5)
+color = Color(1, 0.46, 0.16, 1)
+energy = 1.53
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 5.0
+
+[node name="Halo" type="Sprite2D" parent="Field/Ember9/Light"]
+modulate = Color(1, 0.42, 0.12, 0.55)
+material = ExtResource("51_mf7g4")
+scale = Vector2(1.3, 0.6)
+texture = ExtResource("50_35ghy")
+
+[node name="Sparks" type="CPUParticles2D" parent="Field/Ember9"]
+material = ExtResource("51_mf7g4")
+amount = 5
+lifetime = 2.2
+preprocess = 2.2
+emission_shape = 3
+emission_rect_extents = Vector2(28, 4)
+direction = Vector2(0, -1)
+spread = 25.0
+gravity = Vector2(4, -10)
+initial_velocity_min = 12.0
+initial_velocity_max = 34.0
+scale_amount_min = 1.5
+scale_amount_max = 2.5
+color_ramp = SubResource("Gradient_mwaih")
+
+[node name="Ember10" type="Node2D" parent="Field"]
+position = Vector2(11240, 965)
+
+[node name="Light" type="PointLight2D" parent="Field/Ember10" groups=["hub_flicker"]]
+scale = Vector2(1, 0.5)
+color = Color(1, 0.46, 0.16, 1)
+energy = 1.73
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 5.0
+
+[node name="Halo" type="Sprite2D" parent="Field/Ember10/Light"]
+modulate = Color(1, 0.42, 0.12, 0.55)
+material = ExtResource("51_mf7g4")
+scale = Vector2(1.3, 0.6)
+texture = ExtResource("50_35ghy")
+
+[node name="Sparks" type="CPUParticles2D" parent="Field/Ember10"]
+material = ExtResource("51_mf7g4")
+amount = 5
+lifetime = 2.2
+preprocess = 2.2
+emission_shape = 3
+emission_rect_extents = Vector2(28, 4)
+direction = Vector2(0, -1)
+spread = 25.0
+gravity = Vector2(4, -10)
+initial_velocity_min = 12.0
+initial_velocity_max = 34.0
+scale_amount_min = 1.5
+scale_amount_max = 2.5
+color_ramp = SubResource("Gradient_mwaih")
+
+[node name="Main" type="Node2D" parent="."]
+
+[node name="Shadows" type="Node2D" parent="Main"]
+z_index = -9
+script = ExtResource("e_shadows")
+targets = Array[NodePath]([NodePath("../Gate"), NodePath("../hp_lectern"), NodePath("../hp_wine_counter"), NodePath("../Back/Couch1"), NodePath("../Back/Couch2"), NodePath("../hp_throne"), NodePath("../Back/Couch3"), NodePath("../Back/hp_kottabos"), NodePath("../Stele"), NodePath("../Fire1"), NodePath("../Fire2"), NodePath("../Fire3"), NodePath("../hp_forge_cart"), NodePath("../hp_hermes_stall")])
+widths = PackedFloat32Array(560, 0, 0, 520, 520, 330, 520, 0, 120, 210, 240, 210, 380, 520)
+strength = 0.75
+
+[node name="MoonLight" type="DirectionalLight2D" parent="Main"]
+rotation = 0.6435
+color = Color(0.6, 0.7, 1, 1)
+energy = 0.4
+range_item_cull_mask = 2
+
+[node name="Styx" type="Sprite2D" parent="Main"]
+z_index = -3
+material = SubResource("ShaderMaterial_yjdk8")
+position = Vector2(520, 850)
+scale = Vector2(0.682095, 0.682095)
+texture = ExtResource("14_mx0op")
+offset = Vector2(0, -410.5)
+region_enabled = true
+region_rect = Rect2(517.32, 0, 881.36, 821)
+
+[node name="Gate" type="Sprite2D" parent="Main"]
+light_mask = 3
+material = ExtResource("e_lit")
+position = Vector2(520, 850)
+scale = Vector2(0.6972789, 0.6972789)
+texture = SubResource("ct_hub_gate_open")
+offset = Vector2(0, -588)
+
+[node name="hp_lectern" type="Sprite2D" parent="Main"]
+light_mask = 3
+material = ExtResource("e_lit")
+position = Vector2(1780, 850)
+scale = Vector2(0.6265664, 0.6265664)
+texture = SubResource("ct_hp_lectern")
+offset = Vector2(0, -199.5)
+
+[node name="hub_thanatos" parent="Main" instance=ExtResource("77_a1mhu")]
+position = Vector2(1880, 850)
+scale = Vector2(0.73660713, 0.73660713)
+
+[node name="hub_dionysus" parent="Main" instance=ExtResource("78_kpu3p")]
+z_index = -1
+position = Vector2(2840, 820)
+scale = Vector2(0.7221007, 0.7221007)
+
+[node name="hp_wine_counter" type="Sprite2D" parent="Main"]
+light_mask = 3
+material = ExtResource("e_lit")
+position = Vector2(2930, 850)
+scale = Vector2(0.52757794, 0.52757794)
+texture = SubResource("ct_hp_wine_counter")
+offset = Vector2(0, -208.5)
+
+[node name="Back" type="Node2D" parent="Main"]
+modulate = Color(0.8, 0.82, 0.9, 1)
+z_index = -6
+position = Vector2(0, -14)
+
+[node name="Couch1" type="Sprite2D" parent="Main/Back"]
+z_index = 1
+light_mask = 3
+material = ExtResource("e_lit")
+position = Vector2(3330, 850)
+scale = Vector2(1.1740042, 1.1740042)
+texture = SubResource("ct_hp_kline")
+offset = Vector2(0, -134)
+
+[node name="hub_ares" parent="Main/Back" instance=ExtResource("83_6f7ks")]
+z_index = 2
+position = Vector2(3220, 641.75684)
+scale = Vector2(0.6423983, 0.6423983)
+
+[node name="hub_aphrodite" parent="Main/Back" instance=ExtResource("84_yjdk8")]
+z_index = 2
+position = Vector2(3450, 641.75684)
+scale = Vector2(0.63559324, 0.63559324)
+
+[node name="hp_trapeza" type="Sprite2D" parent="Main/Back"]
+light_mask = 3
+z_index = 3
+material = ExtResource("e_lit")
+position = Vector2(3330, 854)
+scale = Vector2(0.4347826, 0.4347826)
+texture = SubResource("ct_hp_trapeza")
+offset = Vector2(0, -149.5)
+
+[node name="Couch2" type="Sprite2D" parent="Main/Back"]
+z_index = 1
+light_mask = 3
+material = ExtResource("e_lit")
+position = Vector2(4120, 850)
+scale = Vector2(1.1740042, 1.1740042)
+texture = SubResource("ct_hp_kline_demeter")
+offset = Vector2(0, -134)
+
+[node name="hub_demeter" parent="Main/Back" instance=ExtResource("89_mwaih")]
+z_index = 2
+position = Vector2(4010, 641.75684)
+scale = Vector2(0.6423983, 0.6423983)
+
+[node name="hp_trapeza2" type="Sprite2D" parent="Main/Back"]
+light_mask = 3
+z_index = 3
+material = ExtResource("e_lit")
+position = Vector2(4120, 854)
+scale = Vector2(0.4347826, 0.4347826)
+texture = SubResource("ct_hp_trapeza")
+offset = Vector2(0, -149.5)
+
+[node name="Gaia" parent="Main" instance=ExtResource("90_gao5y")]
+z_index = -2
+position = Vector2(4230, 1066)
+scale = Vector2(0.5714286, 0.5714286)
+
+[node name="hp_throne" type="Sprite2D" parent="Main"]
+light_mask = 3
+material = ExtResource("e_lit")
+position = Vector2(4620, 850)
+scale = Vector2(0.9894737, 0.9894737)
+texture = SubResource("ct_hp_throne")
+offset = Vector2(0, -237.5)
+
+[node name="hub_hera" parent="Main" instance=ExtResource("93_k7vbv")]
+position = Vector2(5000, 850)
+scale = Vector2(0.8333333, 0.8333333)
+
+[node name="Couch3" type="Sprite2D" parent="Main/Back"]
+z_index = 1
+light_mask = 3
+material = ExtResource("e_lit")
+position = Vector2(5600, 850)
+scale = Vector2(1.1740042, 1.1740042)
+texture = SubResource("ct_hp_kline")
+offset = Vector2(0, -134)
+
+[node name="hub_apollo" parent="Main/Back" instance=ExtResource("94_xuipr")]
+z_index = 2
+position = Vector2(5490, 641.75684)
+scale = Vector2(0.64377683, 0.64377683)
+
+[node name="hub_athena" parent="Main/Back" instance=ExtResource("95_xwmsj")]
+z_index = 2
+position = Vector2(5720, 641.75684)
+scale = Vector2(0.63829786, 0.63829786)
+
+[node name="hp_trapeza3" type="Sprite2D" parent="Main/Back"]
+light_mask = 3
+z_index = 3
+material = ExtResource("e_lit")
+position = Vector2(5600, 854)
+scale = Vector2(0.4347826, 0.4347826)
+texture = SubResource("ct_hp_trapeza")
+offset = Vector2(0, -149.5)
+
+[node name="hp_kottabos" type="Sprite2D" parent="Main/Back"]
+z_index = 1
+light_mask = 3
+material = ExtResource("e_lit")
+position = Vector2(5930, 850)
+scale = Vector2(0.85714287, 0.85714287)
+texture = SubResource("ct_hp_kottabos")
+offset = Vector2(0, -192.5)
+
+[node name="Stele" type="Sprite2D" parent="Main"]
+light_mask = 3
+material = ExtResource("e_lit")
+position = Vector2(6110, 850)
+scale = Vector2(0.37659717, 0.37659717)
+texture = SubResource("ct_bet_stele")
+offset = Vector2(0, -743.5)
+script = ExtResource("33_mypdh")
+chip_keys = PackedStringArray("chip2_thanatos", "chip2_ares", "chip2_hera", "chip2_athena", "chip2_hades")
+chip_mults = PackedFloat32Array(0.12, 0.6, 1, 1.08, 1.9)
+
+[node name="hub_tyche" parent="Main" instance=ExtResource("101_ca516")]
+position = Vector2(6420, 850)
+scale = Vector2(-0.74725276, 0.74725276)
+
+[node name="hub_hestia" parent="Main" instance=ExtResource("102_e3jho")]
+z_index = 3
+position = Vector2(6990, 850)
+scale = Vector2(0.7425743, 0.7425743)
+
+[node name="hub_hades" parent="Main" instance=ExtResource("103_nxk1v")]
+z_index = 1
+position = Vector2(7440, 850)
+scale = Vector2(0.65645516, 0.65645516)
+
+[node name="hub_persephone" parent="Main" instance=ExtResource("104_j6kve")]
+z_index = 1
+position = Vector2(7580, 850)
+scale = Vector2(0.69124424, 0.69124424)
+
+[node name="hub_clotho" parent="Main" instance=ExtResource("105_25yus")]
+z_index = 1
+position = Vector2(8060, 850)
+scale = Vector2(0.63829786, 0.63829786)
+
+[node name="hub_lachesis" parent="Main" instance=ExtResource("106_wwkti")]
+position = Vector2(8238, 846)
+scale = Vector2(0.7081545, 0.7081545)
+
+[node name="hub_atropos" parent="Main" instance=ExtResource("107_mscn8")]
+z_index = -1
+position = Vector2(8395, 842)
+scale = Vector2(0.7221007, 0.7221007)
+
+[node name="hub_hephaestus" parent="Main" instance=ExtResource("108_aptfy")]
+z_index = 1
+position = Vector2(8650, 850)
+scale = Vector2(0.7039338, 0.7039338)
+
+[node name="hp_forge_cart" type="Sprite2D" parent="Main"]
+light_mask = 3
+material = ExtResource("e_lit")
+position = Vector2(8900, 850)
+scale = Vector2(0.91690546, 0.91690546)
+texture = SubResource("ct_hp_forge_cart")
+offset = Vector2(0, -174.5)
+
+[node name="hp_hermes_stall" type="Sprite2D" parent="Main"]
+light_mask = 3
+material = ExtResource("e_lit")
+position = Vector2(9520, 850)
+scale = Vector2(1.0714285, 1.0714285)
+texture = SubResource("ct_hp_hermes_stall")
+offset = Vector2(0, -196)
+
+[node name="hub_hermes" parent="Main" instance=ExtResource("113_skkxa")]
+z_index = 1
+position = Vector2(9890, 850)
+scale = Vector2(0.77272725, 0.77272725)
+
+[node name="hub_helios" parent="Main" instance=ExtResource("114_2gs2n")]
+z_index = 1
+position = Vector2(10650, 850)
+scale = Vector2(0.75431037, 0.75431037)
+
+[node name="hp_helios_chariot" parent="Main" instance=ExtResource("115_od3v1")]
+position = Vector2(11264, 850)
+scale = Vector2(0.76, 0.76)
+
+[node name="Fire1" type="Node2D" parent="Main"]
+position = Vector2(6800, 850)
+
+[node name="Basin" type="Sprite2D" parent="Main/Fire1"]
+light_mask = 3
+material = ExtResource("e_lit")
+scale = Vector2(0.8579882, 0.8579882)
+texture = SubResource("ct_hp_fire_basin")
+offset = Vector2(0, -169)
+
+[node name="Flame" type="AnimatedSprite2D" parent="Main/Fire1"]
+modulate = Color(1, 0.95, 0.85, 1)
+z_index = 1
+material = ExtResource("48_bq035")
+position = Vector2(0, -250)
+scale = Vector2(0.6440678, 0.6440678)
+sprite_frames = ExtResource("49_mlina")
+animation = &"flame"
+autoplay = "flame"
+frame = 2
+offset = Vector2(0, -147.5)
+
+[node name="BasinFront" type="Sprite2D" parent="Main/Fire1"]
+z_index = 2
+light_mask = 3
+material = SubResource("m_litfront")
+scale = Vector2(0.8579882, 0.8579882)
+texture = SubResource("ct_hp_fire_basin")
+offset = Vector2(0, -169)
+
+[node name="Light" type="PointLight2D" parent="Main/Fire1" groups=["hub_flicker"]]
+position = Vector2(0, -316.5)
+color = Color(1, 0.62, 0.28, 1)
+energy = 1.1
+texture = ExtResource("50_35ghy")
+texture_scale = 9.6875
+
+[node name="Halo" type="Sprite2D" parent="Main/Fire1/Light"]
+modulate = Color(1, 0.55, 0.2, 0.42)
+z_index = -5
+material = ExtResource("51_mf7g4")
+scale = Vector2(6.00625, 4.84375)
+texture = ExtResource("50_35ghy")
+
+[node name="Glow" type="Sprite2D" parent="Main/Fire1"]
+modulate = Color(1, 0.7, 0.35, 0.3)
+z_index = 4
+material = ExtResource("51_mf7g4")
+position = Vector2(0, -288)
+scale = Vector2(2.8203125, 2.375)
+texture = ExtResource("50_35ghy")
+
+[node name="Embers" type="CPUParticles2D" parent="Main/Fire1"]
+z_index = 3
+material = ExtResource("51_mf7g4")
+position = Vector2(0, -345)
+amount = 24
+lifetime = 2.6
+preprocess = 2.6
+emission_shape = 3
+emission_rect_extents = Vector2(85.5, 8)
+direction = Vector2(0, -1)
+spread = 22.0
+gravity = Vector2(6, -22)
+initial_velocity_min = 30.0
+initial_velocity_max = 90.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_mwaih")
+
+[node name="Pool" type="PointLight2D" parent="Main/Fire1" groups=["hub_flicker"]]
+position = Vector2(0, 40)
+scale = Vector2(1, 0.32)
+color = Color(1, 0.6, 0.28, 1)
+energy = 1.5
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 7.5
+
+[node name="Smoke" type="CPUParticles2D" parent="Main/Fire1"]
+z_index = 2
+position = Vector2(0, -360)
+amount = 9
+texture = ExtResource("50_35ghy")
+lifetime = 7.0
+preprocess = 7.0
+emission_shape = 3
+emission_rect_extents = Vector2(60, 10)
+direction = Vector2(0.15, -1)
+spread = 12.0
+gravity = Vector2(5, -6)
+initial_velocity_min = 22.0
+initial_velocity_max = 40.0
+angular_velocity_min = -8.0
+angular_velocity_max = 8.0
+scale_amount_min = 1.4
+scale_amount_max = 2.6
+scale_amount_curve = SubResource("c_smoke")
+color_ramp = SubResource("g_smoke")
+
+[node name="Fire2" type="Node2D" parent="Main"]
+position = Vector2(7200, 850)
+
+[node name="Basin" type="Sprite2D" parent="Main/Fire2"]
+light_mask = 3
+material = ExtResource("e_lit")
+scale = Vector2(0.97633135, 0.97633135)
+texture = SubResource("ct_hp_fire_basin")
+offset = Vector2(0, -169)
+
+[node name="Flame" type="AnimatedSprite2D" parent="Main/Fire2"]
+modulate = Color(1, 0.95, 0.85, 1)
+z_index = 1
+material = ExtResource("48_bq035")
+position = Vector2(0, -290)
+scale = Vector2(0.779661, 0.779661)
+sprite_frames = ExtResource("49_mlina")
+animation = &"flame"
+autoplay = "flame"
+frame = 4
+offset = Vector2(0, -147.5)
+
+[node name="BasinFront" type="Sprite2D" parent="Main/Fire2"]
+z_index = 2
+light_mask = 3
+material = SubResource("m_litfront")
+scale = Vector2(0.97633135, 0.97633135)
+texture = SubResource("ct_hp_fire_basin")
+offset = Vector2(0, -169)
+
+[node name="Light" type="PointLight2D" parent="Main/Fire2" groups=["hub_flicker"]]
+position = Vector2(0, -370.5)
+color = Color(1, 0.62, 0.28, 1)
+energy = 1.25
+texture = ExtResource("50_35ghy")
+texture_scale = 11.25
+
+[node name="Halo" type="Sprite2D" parent="Main/Fire2/Light"]
+modulate = Color(1, 0.55, 0.2, 0.42)
+z_index = -5
+material = ExtResource("51_mf7g4")
+scale = Vector2(6.975, 5.625)
+texture = ExtResource("50_35ghy")
+
+[node name="Glow" type="Sprite2D" parent="Main/Fire2"]
+modulate = Color(1, 0.7, 0.35, 0.3)
+z_index = 4
+material = ExtResource("51_mf7g4")
+position = Vector2(0, -336)
+scale = Vector2(3.4140625, 2.875)
+texture = ExtResource("50_35ghy")
+
+[node name="Embers" type="CPUParticles2D" parent="Main/Fire2"]
+z_index = 3
+material = ExtResource("51_mf7g4")
+position = Vector2(0, -405)
+amount = 24
+lifetime = 2.6
+preprocess = 2.6
+emission_shape = 3
+emission_rect_extents = Vector2(103.5, 8)
+direction = Vector2(0, -1)
+spread = 22.0
+gravity = Vector2(6, -22)
+initial_velocity_min = 30.0
+initial_velocity_max = 90.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_gao5y")
+
+[node name="Pool" type="PointLight2D" parent="Main/Fire2" groups=["hub_flicker"]]
+position = Vector2(0, 40)
+scale = Vector2(1, 0.32)
+color = Color(1, 0.6, 0.28, 1)
+energy = 1.71
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 8.55
+
+[node name="Smoke" type="CPUParticles2D" parent="Main/Fire2"]
+z_index = 2
+position = Vector2(0, -410)
+amount = 9
+texture = ExtResource("50_35ghy")
+lifetime = 7.0
+preprocess = 7.0
+emission_shape = 3
+emission_rect_extents = Vector2(68, 10)
+direction = Vector2(0.15, -1)
+spread = 12.0
+gravity = Vector2(5, -6)
+initial_velocity_min = 22.0
+initial_velocity_max = 40.0
+angular_velocity_min = -8.0
+angular_velocity_max = 8.0
+scale_amount_min = 1.4
+scale_amount_max = 2.6
+scale_amount_curve = SubResource("c_smoke")
+color_ramp = SubResource("g_smoke")
+
+[node name="Fire3" type="Node2D" parent="Main"]
+position = Vector2(7800, 850)
+
+[node name="Basin" type="Sprite2D" parent="Main/Fire3"]
+light_mask = 3
+material = ExtResource("e_lit")
+scale = Vector2(0.8579882, 0.8579882)
+texture = SubResource("ct_hp_fire_basin")
+offset = Vector2(0, -169)
+
+[node name="Flame" type="AnimatedSprite2D" parent="Main/Fire3"]
+modulate = Color(1, 0.95, 0.85, 1)
+z_index = 1
+material = ExtResource("48_bq035")
+position = Vector2(0, -250)
+scale = Vector2(0.6440678, 0.6440678)
+sprite_frames = ExtResource("49_mlina")
+animation = &"flame"
+autoplay = "flame"
+offset = Vector2(0, -147.5)
+
+[node name="BasinFront" type="Sprite2D" parent="Main/Fire3"]
+z_index = 2
+light_mask = 3
+material = SubResource("m_litfront")
+scale = Vector2(0.8579882, 0.8579882)
+texture = SubResource("ct_hp_fire_basin")
+offset = Vector2(0, -169)
+
+[node name="Light" type="PointLight2D" parent="Main/Fire3" groups=["hub_flicker"]]
+position = Vector2(0, -316.5)
+color = Color(1, 0.62, 0.28, 1)
+energy = 1.1
+texture = ExtResource("50_35ghy")
+texture_scale = 9.6875
+
+[node name="Halo" type="Sprite2D" parent="Main/Fire3/Light"]
+modulate = Color(1, 0.55, 0.2, 0.42)
+z_index = -5
+material = ExtResource("51_mf7g4")
+scale = Vector2(6.00625, 4.84375)
+texture = ExtResource("50_35ghy")
+
+[node name="Glow" type="Sprite2D" parent="Main/Fire3"]
+modulate = Color(1, 0.7, 0.35, 0.3)
+z_index = 4
+material = ExtResource("51_mf7g4")
+position = Vector2(0, -288)
+scale = Vector2(2.8203125, 2.375)
+texture = ExtResource("50_35ghy")
+
+[node name="Embers" type="CPUParticles2D" parent="Main/Fire3"]
+z_index = 3
+material = ExtResource("51_mf7g4")
+position = Vector2(0, -345)
+amount = 24
+lifetime = 2.6
+preprocess = 2.6
+emission_shape = 3
+emission_rect_extents = Vector2(85.5, 8)
+direction = Vector2(0, -1)
+spread = 22.0
+gravity = Vector2(6, -22)
+initial_velocity_min = 30.0
+initial_velocity_max = 90.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_k7vbv")
+
+[node name="Pool" type="PointLight2D" parent="Main/Fire3" groups=["hub_flicker"]]
+position = Vector2(0, 40)
+scale = Vector2(1, 0.32)
+color = Color(1, 0.6, 0.28, 1)
+energy = 1.5
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 7.5
+
+[node name="Smoke" type="CPUParticles2D" parent="Main/Fire3"]
+z_index = 2
+position = Vector2(0, -360)
+amount = 9
+texture = ExtResource("50_35ghy")
+lifetime = 7.0
+preprocess = 7.0
+emission_shape = 3
+emission_rect_extents = Vector2(60, 10)
+direction = Vector2(0.15, -1)
+spread = 12.0
+gravity = Vector2(5, -6)
+initial_velocity_min = 22.0
+initial_velocity_max = 40.0
+angular_velocity_min = -8.0
+angular_velocity_max = 8.0
+scale_amount_min = 1.4
+scale_amount_max = 2.6
+scale_amount_curve = SubResource("c_smoke")
+color_ramp = SubResource("g_smoke")
+
+[node name="Lamp1" type="Node2D" parent="Main"]
+position = Vector2(2690, 530)
+script = ExtResource("e_swing")
+amplitude = 1.4
+period = 4.6
+
+[node name="Chain" type="Line2D" parent="Main/Lamp1"]
+points = PackedVector2Array(0, -540, 0, -150)
+width = 2.0
+default_color = Color(0.16470589, 0.16470589, 0.1882353, 1)
+
+[node name="Body" type="Sprite2D" parent="Main/Lamp1"]
+light_mask = 3
+material = ExtResource("e_lit")
+scale = Vector2(0.34642032, 0.34642032)
+texture = SubResource("ct_hp_oil_lamp")
+offset = Vector2(0, -216.5)
+
+[node name="Light" type="PointLight2D" parent="Main/Lamp1" groups=["hub_flicker"]]
+position = Vector2(57, -33)
+color = Color(1, 0.7, 0.36, 1)
+energy = 0.4
+texture = ExtResource("50_35ghy")
+texture_scale = 7.1875
+
+[node name="Halo" type="Sprite2D" parent="Main/Lamp1/Light"]
+modulate = Color(1, 0.72, 0.38, 0.45)
+z_index = 4
+material = ExtResource("51_mf7g4")
+scale = Vector2(1.09375, 1.09375)
+texture = ExtResource("50_35ghy")
+
+[node name="Pool" type="PointLight2D" parent="Main/Lamp1" groups=["hub_flicker"]]
+position = Vector2(40, 332)
+scale = Vector2(1, 0.3)
+color = Color(1, 0.68, 0.36, 1)
+energy = 0.9
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 4.5
+
+[node name="Lamp2" type="Node2D" parent="Main"]
+position = Vector2(3330, 400)
+script = ExtResource("e_swing")
+amplitude = 1.8
+period = 5.1
+phase = 1.3
+
+[node name="Chain" type="Line2D" parent="Main/Lamp2"]
+points = PackedVector2Array(0, -410, 0, -150)
+width = 2.0
+default_color = Color(0.16470589, 0.16470589, 0.1882353, 1)
+
+[node name="Body" type="Sprite2D" parent="Main/Lamp2"]
+light_mask = 3
+material = ExtResource("e_lit")
+scale = Vector2(0.34642032, 0.34642032)
+texture = SubResource("ct_hp_oil_lamp")
+offset = Vector2(0, -216.5)
+
+[node name="Light" type="PointLight2D" parent="Main/Lamp2" groups=["hub_flicker"]]
+position = Vector2(57, -33)
+color = Color(1, 0.7, 0.36, 1)
+energy = 0.85
+texture = ExtResource("50_35ghy")
+texture_scale = 8.75
+
+[node name="Halo" type="Sprite2D" parent="Main/Lamp2/Light"]
+modulate = Color(1, 0.72, 0.38, 0.45)
+z_index = 4
+material = ExtResource("51_mf7g4")
+scale = Vector2(1.09375, 1.09375)
+texture = ExtResource("50_35ghy")
+
+[node name="Pool" type="PointLight2D" parent="Main/Lamp2" groups=["hub_flicker"]]
+position = Vector2(40, 462)
+scale = Vector2(1, 0.3)
+color = Color(1, 0.68, 0.36, 1)
+energy = 0.9
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 4.5
+
+[node name="Lamp3" type="Node2D" parent="Main"]
+position = Vector2(4120, 400)
+script = ExtResource("e_swing")
+period = 4.3
+phase = 2.9
+
+[node name="Chain" type="Line2D" parent="Main/Lamp3"]
+points = PackedVector2Array(0, -410, 0, -150)
+width = 2.0
+default_color = Color(0.16470589, 0.16470589, 0.1882353, 1)
+
+[node name="Body" type="Sprite2D" parent="Main/Lamp3"]
+light_mask = 3
+material = ExtResource("e_lit")
+scale = Vector2(0.34642032, 0.34642032)
+texture = SubResource("ct_hp_oil_lamp")
+offset = Vector2(0, -216.5)
+
+[node name="Light" type="PointLight2D" parent="Main/Lamp3" groups=["hub_flicker"]]
+position = Vector2(57, -33)
+color = Color(1, 0.7, 0.36, 1)
+energy = 0.85
+texture = ExtResource("50_35ghy")
+texture_scale = 8.75
+
+[node name="Halo" type="Sprite2D" parent="Main/Lamp3/Light"]
+modulate = Color(1, 0.72, 0.38, 0.45)
+z_index = 4
+material = ExtResource("51_mf7g4")
+scale = Vector2(1.09375, 1.09375)
+texture = ExtResource("50_35ghy")
+
+[node name="Pool" type="PointLight2D" parent="Main/Lamp3" groups=["hub_flicker"]]
+position = Vector2(40, 462)
+scale = Vector2(1, 0.3)
+color = Color(1, 0.68, 0.36, 1)
+energy = 0.9
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 4.5
+
+[node name="Lamp4" type="Node2D" parent="Main"]
+position = Vector2(5600, 400)
+script = ExtResource("e_swing")
+amplitude = 1.7
+period = 4.8
+phase = 0.7
+
+[node name="Chain" type="Line2D" parent="Main/Lamp4"]
+points = PackedVector2Array(0, -410, 0, -150)
+width = 2.0
+default_color = Color(0.16470589, 0.16470589, 0.1882353, 1)
+
+[node name="Body" type="Sprite2D" parent="Main/Lamp4"]
+light_mask = 3
+material = ExtResource("e_lit")
+scale = Vector2(0.34642032, 0.34642032)
+texture = SubResource("ct_hp_oil_lamp")
+offset = Vector2(0, -216.5)
+
+[node name="Light" type="PointLight2D" parent="Main/Lamp4" groups=["hub_flicker"]]
+position = Vector2(57, -33)
+color = Color(1, 0.7, 0.36, 1)
+energy = 0.85
+texture = ExtResource("50_35ghy")
+texture_scale = 8.75
+
+[node name="Halo" type="Sprite2D" parent="Main/Lamp4/Light"]
+modulate = Color(1, 0.72, 0.38, 0.45)
+z_index = 4
+material = ExtResource("51_mf7g4")
+scale = Vector2(1.09375, 1.09375)
+texture = ExtResource("50_35ghy")
+
+[node name="Pool" type="PointLight2D" parent="Main/Lamp4" groups=["hub_flicker"]]
+position = Vector2(40, 462)
+scale = Vector2(1, 0.3)
+color = Color(1, 0.68, 0.36, 1)
+energy = 0.9
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 4.5
+
+[node name="Lamp5" type="Node2D" parent="Main"]
+position = Vector2(9370, 480)
+script = ExtResource("e_swing")
+amplitude = 1.5
+period = 5.4
+phase = 2.2
+
+[node name="Chain" type="Line2D" parent="Main/Lamp5"]
+points = PackedVector2Array(0, -490, 0, -150)
+width = 2.0
+default_color = Color(0.16470589, 0.16470589, 0.1882353, 1)
+
+[node name="Body" type="Sprite2D" parent="Main/Lamp5"]
+light_mask = 3
+material = ExtResource("e_lit")
+scale = Vector2(0.34642032, 0.34642032)
+texture = SubResource("ct_hp_oil_lamp")
+offset = Vector2(0, -216.5)
+
+[node name="Light" type="PointLight2D" parent="Main/Lamp5" groups=["hub_flicker"]]
+position = Vector2(57, -33)
+color = Color(1, 0.7, 0.36, 1)
+energy = 0.8
+texture = ExtResource("50_35ghy")
+texture_scale = 8.125
+
+[node name="Halo" type="Sprite2D" parent="Main/Lamp5/Light"]
+modulate = Color(1, 0.72, 0.38, 0.45)
+z_index = 4
+material = ExtResource("51_mf7g4")
+scale = Vector2(1.09375, 1.09375)
+texture = ExtResource("50_35ghy")
+
+[node name="Pool" type="PointLight2D" parent="Main/Lamp5" groups=["hub_flicker"]]
+position = Vector2(40, 382)
+scale = Vector2(1, 0.3)
+color = Color(1, 0.68, 0.36, 1)
+energy = 0.9
+range_item_cull_mask = 4
+texture = ExtResource("50_35ghy")
+texture_scale = 4.5
+
+[node name="GateFireL" type="PointLight2D" parent="Main" groups=["hub_flicker"]]
+position = Vector2(225, 210)
+color = Color(1, 0.627451, 0.2509804, 1)
+energy = 0.7
+texture = ExtResource("50_35ghy")
+texture_scale = 4.0625
+
+[node name="GateFireR" type="PointLight2D" parent="Main" groups=["hub_flicker"]]
+position = Vector2(815, 210)
+color = Color(1, 0.627451, 0.2509804, 1)
+energy = 0.7
+texture = ExtResource("50_35ghy")
+texture_scale = 4.0625
+
+[node name="GhostGlow" type="PointLight2D" parent="Main"]
+position = Vector2(2410, 650)
+color = Color(0.54901963, 0.7058824, 1, 1)
+energy = 0.4
+texture = ExtResource("50_35ghy")
+texture_scale = 8.75
+
+[node name="ThroneMoon" type="PointLight2D" parent="Main"]
+position = Vector2(4620, 430)
+color = Color(0.6509804, 0.7490196, 1, 1)
+energy = 0.5
+texture = ExtResource("50_35ghy")
+texture_scale = 6.5625
+
+[node name="ForgeLight" type="PointLight2D" parent="Main" groups=["hub_flicker"]]
+position = Vector2(8900, 620)
+color = Color(1, 0.6039216, 0.23529412, 1)
+energy = 0.9
+texture = ExtResource("50_35ghy")
+texture_scale = 6.5625
+
+[node name="DawnLight" type="PointLight2D" parent="Main"]
+position = Vector2(11150, 550)
+color = Color(1, 0.6901961, 0.3764706, 1)
+energy = 1.0
+texture = ExtResource("50_35ghy")
+texture_scale = 28.125
+
+[node name="ForgeSparks" type="CPUParticles2D" parent="Main"]
+z_index = 4
+material = ExtResource("51_mf7g4")
+position = Vector2(8750, 706)
+emitting = false
+amount = 18
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.95
+direction = Vector2(-0.4, -1)
+spread = 55.0
+gravity = Vector2(0, 620)
+initial_velocity_min = 140.0
+initial_velocity_max = 330.0
+scale_amount_min = 2.0
+scale_amount_max = 3.5
+color_ramp = SubResource("Gradient_xuipr")
+
+[node name="MoonBeam" type="Polygon2D" parent="Main"]
+z_index = -5
+material = ExtResource("51_mf7g4")
+polygon = PackedVector2Array(4550, -20, 4690, -20, 4770, 850, 4470, 850)
+vertex_colors = PackedColorArray(0.6, 0.72, 0.95, 0.16, 0.6, 0.72, 0.95, 0.16, 0.6, 0.72, 0.95, 0.05, 0.6, 0.72, 0.95, 0.05)
+
+[node name="Queue" type="Marker2D" parent="Main"]
+into_x = -1600.0
+spacing = 100.0
+z_index = -1
+position = Vector2(2160, 842)
+script = ExtResource("53_twioc")
+keys = PackedStringArray("gh_shepherd", "gh_potter", "gh_oldwoman", "gh_baker", "gh_soldier", "gh_mother")
+
+[node name="Servant1" type="Sprite2D" parent="Main/Back"]
+modulate = Color(0.72, 0.86, 1.15, 0.95)
+z_index = 0
+material = ExtResource("48_bq035")
+position = Vector2(3250, 850)
+scale = Vector2(0.6987952, 0.6987952)
+texture = ExtResource("54_k6qac")
+offset = Vector2(0, -207.5)
+script = ExtResource("55_q5gti")
+span = 470.0
+speed = 46.0
+dwell = 6.0
+veils = Array[NodePath]([NodePath("../Couch1"), NodePath("../Couch2")])
+
+[node name="Halo" type="Sprite2D" parent="Main/Back/Servant1"]
+modulate = Color(0.55, 0.72, 1, 0.22)
+z_index = -1
+material = ExtResource("51_mf7g4")
+position = Vector2(0, -207.5)
+scale = Vector2(2.7234373, 4.0203123)
+texture = ExtResource("50_35ghy")
+
+[node name="Servant2" type="Sprite2D" parent="Main/Back"]
+modulate = Color(0.72, 0.86, 1.15, 0.95)
+z_index = 0
+material = ExtResource("48_bq035")
+position = Vector2(5240, 850)
+scale = Vector2(0.69711536, 0.69711536)
+texture = ExtResource("56_aayfx")
+offset = Vector2(0, -208)
+script = ExtResource("55_q5gti")
+span = 470.0
+speed = 40.0
+dwell = 7.0
+veils = Array[NodePath]([NodePath("../Couch3")])
+
+[node name="Halo" type="Sprite2D" parent="Main/Back/Servant2"]
+modulate = Color(0.55, 0.72, 1, 0.22)
+z_index = -1
+material = ExtResource("51_mf7g4")
+position = Vector2(0, -208)
+scale = Vector2(2.73, 4.03)
+texture = ExtResource("50_35ghy")
+
+[node name="Helpers" type="Marker2D" parent="Main"]
+position = Vector2(1000, 850)
+script = ExtResource("57_3ed22")
+spartans = PackedStringArray("hp2_spartan_idle", "hp2_spartan_salute")
+ghosts = PackedStringArray("gh_help_water", "gh_help_fan", "gh_help_lamp")
+
+[node name="SleepingDog" parent="Main" instance=ExtResource("127_jddyl")]
+position = Vector2(150, 850)
+scale = Vector2(0.45801526, 0.45801526)
+
+[node name="PlayerAura" type="Sprite2D" parent="Main"]
+modulate = Color(0.02, 0.02, 0.05, 0.55)
+z_index = 9
+material = ExtResource("48_bq035")
+position = Vector2(860, 672)
+scale = Vector2(2.6, 6.8)
+texture = SubResource("g_aura")
+
+[node name="Player" parent="Main" instance=ExtResource("128_a1mhu")]
+z_index = 10
+position = Vector2(860, 872)
+scale = Vector2(1.06283, 1.06283)
+lit = true
+
+[node name="WalkMin" type="Marker2D" parent="Main"]
+position = Vector2(700, 850)
+gizmo_extents = 60.0
+
+[node name="WalkMax" type="Marker2D" parent="Main"]
+position = Vector2(11000, 850)
+gizmo_extents = 60.0
+
+[node name="FrontMist" type="Node2D" parent="."]
+z_index = 15
+script = ExtResource("3_tmi00")
+factor = 1.12
+
+[node name="Mist" type="Sprite2D" parent="FrontMist"]
+material = SubResource("mm_front")
+position = Vector2(6000, 1015)
+scale = Vector2(1500, 2.65625)
+texture = SubResource("g_mist_low")
+
+[node name="Fg" type="Node2D" parent="."]
+z_index = 20
+script = ExtResource("3_tmi00")
+factor = 1.25
+
+[node name="fh_blocks_wheel0" type="Sprite2D" parent="Fg" groups=["hub_fade"]]
+light_mask = 3
+material = ExtResource("e_fg")
+position = Vector2(260, 1110)
+scale = Vector2(0.8, 0.8)
+texture = SubResource("ct_fh_blocks_wheel")
+offset = Vector2(0, -127)
+
+[node name="fh_tiles_beams1" type="Sprite2D" parent="Fg" groups=["hub_fade"]]
+light_mask = 3
+material = ExtResource("e_fg")
+position = Vector2(1480, 1110)
+scale = Vector2(0.7, 0.7)
+texture = SubResource("ct_fh_tiles_beams")
+offset = Vector2(0, -143.5)
+flip_h = true
+
+[node name="fh_amphorae2" type="Sprite2D" parent="Fg" groups=["hub_fade"]]
+light_mask = 3
+material = ExtResource("e_fg")
+position = Vector2(2760, 1110)
+scale = Vector2(0.78, 0.78)
+texture = SubResource("ct_fh_amphorae")
+offset = Vector2(0, -134)
+
+[node name="fh_lintel3" type="Sprite2D" parent="Fg" groups=["hub_fade"]]
+light_mask = 3
+material = ExtResource("e_fg")
+position = Vector2(4020, 1110)
+scale = Vector2(0.72, 0.72)
+texture = SubResource("ct_fh_lintel")
+offset = Vector2(0, -136.5)
+flip_h = true
+
+[node name="fh_bricks_horse4" type="Sprite2D" parent="Fg" groups=["hub_fade"]]
+light_mask = 3
+material = ExtResource("e_fg")
+position = Vector2(5260, 1110)
+scale = Vector2(0.743, 0.743)
+texture = SubResource("ct_fh_bricks_horse")
+offset = Vector2(0, -151.5)
+
+[node name="fh_head5" type="Sprite2D" parent="Fg" groups=["hub_fade"]]
+light_mask = 3
+material = ExtResource("e_fg")
+position = Vector2(6520, 1110)
+scale = Vector2(0.7, 0.7)
+texture = SubResource("ct_fh_head")
+offset = Vector2(0, -140.5)
+
+[node name="fh_tiles_beams6" type="Sprite2D" parent="Fg" groups=["hub_fade"]]
+light_mask = 3
+material = ExtResource("e_fg")
+position = Vector2(7800, 1110)
+scale = Vector2(0.76, 0.76)
+texture = SubResource("ct_fh_tiles_beams")
+offset = Vector2(0, -143.5)
+flip_h = true
+
+[node name="fh_amphorae7" type="Sprite2D" parent="Fg" groups=["hub_fade"]]
+light_mask = 3
+material = ExtResource("e_fg")
+position = Vector2(9060, 1110)
+scale = Vector2(0.72, 0.72)
+texture = SubResource("ct_fh_amphorae")
+offset = Vector2(0, -134)
+
+[node name="fh_blocks_wheel8" type="Sprite2D" parent="Fg" groups=["hub_fade"]]
+light_mask = 3
+material = ExtResource("e_fg")
+position = Vector2(10300, 1110)
+scale = Vector2(0.78, 0.78)
+texture = SubResource("ct_fh_blocks_wheel")
+offset = Vector2(0, -127)
+flip_h = true
+
+[node name="fh_lintel9" type="Sprite2D" parent="Fg" groups=["hub_fade"]]
+light_mask = 3
+material = ExtResource("e_fg")
+position = Vector2(11560, 1110)
+scale = Vector2(0.74, 0.74)
+texture = SubResource("ct_fh_lintel")
+offset = Vector2(0, -136.5)
+
+[node name="Stations" type="Node2D" parent="."]
+
+[node name="St_thanatos" type="Marker2D" parent="Stations"]
+position = Vector2(2040, 850)
+script = ExtResource("68_nl2b2")
+id = "thanatos"
+who = "thanatos"
+action = "shop"
+branches = PackedStringArray("crowd")
+title = "塔纳托斯 · 冥府名册"
+subtitle = "门口排队的魂灵，买下的归你，没买的回城里去。"
+verb = "名册"
+display_name = "塔纳托斯"
+
+[node name="St_dionysus" type="Marker2D" parent="Stations"]
+position = Vector2(2870, 850)
+script = ExtResource("68_nl2b2")
+id = "dionysus"
+who = "dionysus"
+action = "shop"
+branches = PackedStringArray("wine")
+title = "狄俄尼索斯 · 侍酒台"
+subtitle = "三坛好酒，喝一次，效果管到底。"
+verb = "买卖"
+display_name = "狄俄尼索斯"
+
+[node name="St_ares" type="Marker2D" parent="Stations"]
+position = Vector2(3220, 850)
+script = ExtResource("68_nl2b2")
+id = "ares"
+who = "ares"
+action = "shop"
+branches = PackedStringArray("crush")
+title = "阿瑞斯 · 碾"
+subtitle = "战神只在意一件事：石头碾得够不够狠。"
+verb = "买卖"
+display_name = "阿瑞斯"
+
+[node name="St_aphrodite" type="Marker2D" parent="Stations"]
+position = Vector2(3450, 850)
+script = ExtResource("68_nl2b2")
+id = "aphrodite"
+who = "aphrodite"
+branches = PackedStringArray()
+display_name = "阿佛洛狄忒"
+
+[node name="St_demeter" type="Marker2D" parent="Stations"]
+position = Vector2(4010, 850)
+script = ExtResource("68_nl2b2")
+id = "demeter"
+who = "demeter"
+action = "shop"
+branches = PackedStringArray("mount")
+title = "德墨忒尔 · 山"
+subtitle = "山上的一草一木都归她管，碾坏了也能长回来。"
+verb = "买卖"
+display_name = "德墨忒尔"
+
+[node name="St_gaia" type="Marker2D" parent="Stations"]
+position = Vector2(4230, 850)
+script = ExtResource("68_nl2b2")
+id = "gaia"
+who = "gaia"
+branches = PackedStringArray()
+verb = "俯身"
+display_name = "盖亚"
+
+[node name="St_throne" type="Marker2D" parent="Stations"]
+position = Vector2(4620, 850)
+script = ExtResource("68_nl2b2")
+id = "throne"
+branches = PackedStringArray()
+verb = "看看"
+display_name = "宙斯的座位"
+
+[node name="St_hera" type="Marker2D" parent="Stations"]
+position = Vector2(4980, 850)
+script = ExtResource("68_nl2b2")
+id = "hera"
+who = "hera"
+branches = PackedStringArray()
+verb = "听议程"
+display_name = "赫拉"
+
+[node name="St_apollo" type="Marker2D" parent="Stations"]
+position = Vector2(5490, 850)
+script = ExtResource("68_nl2b2")
+id = "apollo"
+who = "apollo"
+branches = PackedStringArray()
+display_name = "阿波罗"
+
+[node name="St_athena" type="Marker2D" parent="Stations"]
+position = Vector2(5720, 850)
+script = ExtResource("68_nl2b2")
+id = "athena"
+who = "athena"
+branches = PackedStringArray()
+display_name = "雅典娜"
+
+[node name="St_tyche" type="Marker2D" parent="Stations"]
+position = Vector2(6250, 850)
+script = ExtResource("68_nl2b2")
+id = "tyche"
+who = "tyche"
+action = "bet"
+branches = PackedStringArray()
+verb = "下注"
+display_name = "提喀"
+
+[node name="St_hestia" type="Marker2D" parent="Stations"]
+position = Vector2(7110, 850)
+script = ExtResource("68_nl2b2")
+id = "hestia"
+who = "hestia"
+branches = PackedStringArray()
+display_name = "赫斯提亚"
+
+[node name="St_hades" type="Marker2D" parent="Stations"]
+position = Vector2(7410, 850)
+script = ExtResource("68_nl2b2")
+id = "hades"
+who = "hades"
+branches = PackedStringArray()
+display_name = "哈迪斯"
+
+[node name="St_persephone" type="Marker2D" parent="Stations"]
+position = Vector2(7600, 850)
+script = ExtResource("68_nl2b2")
+id = "persephone"
+who = "persephone"
+branches = PackedStringArray()
+display_name = "珀耳塞福涅"
+
+[node name="St_moirai" type="Marker2D" parent="Stations"]
+position = Vector2(8210, 850)
+script = ExtResource("68_nl2b2")
+id = "moirai"
+who = "lachesis"
+action = "shop"
+branches = PackedStringArray("clotho", "lachesis", "atropos")
+until_moira = true
+title = "命运三女神 · 纺 · 量 · 剪"
+subtitle = "她们只收命运，不收钱。"
+verb = "买卖"
+display_name = "命运三女神"
+
+[node name="St_hephaestus" type="Marker2D" parent="Stations"]
+position = Vector2(8880, 850)
+script = ExtResource("68_nl2b2")
+id = "hephaestus"
+who = "hephaestus"
+action = "shop"
+branches = PackedStringArray("stone")
+title = "赫菲斯托斯 · 锻炉"
+subtitle = "石头想长得更快、更大，就来找他。"
+verb = "锻造"
+display_name = "赫菲斯托斯"
+
+[node name="St_hermes" type="Marker2D" parent="Stations"]
+position = Vector2(9720, 850)
+script = ExtResource("68_nl2b2")
+id = "hermes"
+who = "hermes"
+action = "shop"
+branches = PackedStringArray("hand", "foot", "back", "gods")
+title = "赫尔墨斯的驴摊"
+subtitle = "手上的力气、脚下的步子、背上的体力，赫尔墨斯都卖，概不赊账。"
+verb = "买卖"
+display_name = "赫尔墨斯"
+
+[node name="St_helios" type="Marker2D" parent="Stations"]
+position = Vector2(10470, 850)
+script = ExtResource("68_nl2b2")
+id = "helios"
+who = "helios"
+action = "exit"
+branches = PackedStringArray()
+verb = "天亮"
+display_name = "赫利俄斯"
+trigger_range = 200.0
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(860, 540)
+limit_left = 0
+limit_top = 0
+limit_right = 11800
+limit_bottom = 1080
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+
+[node name="Grade" type="CanvasLayer" parent="."]
+layer = 25
+
+[node name="Vignette" type="ColorRect" parent="Grade"]
+material = SubResource("m_vignette")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+layer = 30
+
+[node name="UI" type="Control" parent="UILayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("69_dgiug")
+
+[node name="Prompt" type="PanelContainer" parent="UILayer/UI"]
+visible = false
+layout_mode = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ca516")
+
+[node name="Label" type="Label" parent="UILayer/UI/Prompt"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("70_ukjqx")
+theme_override_font_sizes/font_size = 20
+text = "E   交谈 · 赫拉"
+
+[node name="MoneyRow" type="HBoxContainer" parent="UILayer/UI"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 18.0
+offset_right = -28.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="Money" type="Label" parent="UILayer/UI/MoneyRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8784314, 0.5411765, 1)
+theme_override_fonts/font = ExtResource("71_r3vpi")
+theme_override_font_sizes/font_size = 30
+text = "1,234"
+horizontal_alignment = 2
+
+[node name="Unit" type="Label" parent="UILayer/UI/MoneyRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+theme_override_fonts/font = ExtResource("72_ixkmj")
+theme_override_font_sizes/font_size = 18
+text = "德拉克马"
+
+[node name="Moira" type="Label" parent="UILayer/UI/MoneyRow"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.91764706, 0.85882354, 0.72156864, 1)
+theme_override_fonts/font = ExtResource("71_r3vpi")
+theme_override_font_sizes/font_size = 30
+text = "37"
+horizontal_alignment = 2
+
+[node name="MoiraUnit" type="Label" parent="UILayer/UI/MoneyRow"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+theme_override_fonts/font = ExtResource("72_ixkmj")
+theme_override_font_sizes/font_size = 18
+text = "命运"
+
+[node name="Hint" type="Label" parent="UILayer/UI"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -40.0
+offset_right = 500.0
+offset_bottom = -14.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 0.85)
+theme_override_fonts/font = ExtResource("73_qd4f3")
+theme_override_font_sizes/font_size = 16
+text = "A / D 走动　Shift 快走　E 交谈 · 交易　Tab 全场速览　Esc 暂停"
+horizontal_alignment = 1
+
+[node name="Title" type="VBoxContainer" parent="UILayer/UI"]
+layout_mode = 0
+anchor_left = 0.66
+anchor_right = 0.66
+offset_left = -600.0
+offset_top = 200.0
+offset_right = 600.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Head" type="Label" parent="UILayer/UI/Title"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("74_nd3l5")
+theme_override_font_sizes/font_size = 44
+text = "夜 宴 · 第 1 夜"
+horizontal_alignment = 1
+
+[node name="Sub" type="Label" parent="UILayer/UI/Title"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+theme_override_fonts/font = ExtResource("73_qd4f3")
+theme_override_font_sizes/font_size = 18
+text = "众神在废墟上开宴，等天亮，城又会变回原样。"
+horizontal_alignment = 1

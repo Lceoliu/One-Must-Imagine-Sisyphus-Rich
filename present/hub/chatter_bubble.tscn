@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://present/hub/chatter_bubble.gd" id="1_cb"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_500.tres" id="2_f5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cb"]
+content_margin_left = 14.0
+content_margin_top = 8.0
+content_margin_right = 14.0
+content_margin_bottom = 9.0
+bg_color = Color(0.85, 0.91, 1, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0705882, 0.0470588, 0.0392157, 0.55)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.4, 0.6, 1, 0.25)
+shadow_size = 8
+
+[node name="ChatterBubble" type="PanelContainer"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 120.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cb")
+script = ExtResource("1_cb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_f5")
+theme_override_font_sizes/font_size = 19
+text = "这队排得真长。"
+
+[node name="Tail" type="Polygon2D" parent="."]
+position = Vector2(60, 39)
+color = Color(0.85, 0.91, 1, 0.9)
+polygon = PackedVector2Array(-8, 0, 8, 0, 0, 10)

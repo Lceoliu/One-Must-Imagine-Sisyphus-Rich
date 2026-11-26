@@ -1,0 +1,43 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/native/hub_sis/sis_idle.png" id="1_hwbji"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_sis/sis_walk_0.png" id="2_cmwr3"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_sis/sis_walk_1.png" id="3_3c3d1"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_sis/sis_walk_2.png" id="4_qml5l"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_sis/sis_walk_3.png" id="5_fy4y8"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_sis/sis_walk_4.png" id="6_de1ir"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_sis/sis_walk_5.png" id="7_ti7p4"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hwbji")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cmwr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3c3d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qml5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fy4y8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_de1ir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ti7p4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 9.0
+}]

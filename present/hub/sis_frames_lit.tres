@@ -1,0 +1,78 @@
+[gd_resource type="SpriteFrames" load_steps=22 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/native/hub_sis/sis_idle.png" id="d0"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_sis/sis_idle_n.png" id="n0"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_sis/sis_walk_0.png" id="d1"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_sis/sis_walk_0_n.png" id="n1"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_sis/sis_walk_1.png" id="d2"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_sis/sis_walk_1_n.png" id="n2"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_sis/sis_walk_2.png" id="d3"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_sis/sis_walk_2_n.png" id="n3"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_sis/sis_walk_3.png" id="d4"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_sis/sis_walk_3_n.png" id="n4"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_sis/sis_walk_4.png" id="d5"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_sis/sis_walk_4_n.png" id="n5"]
+[ext_resource type="Texture2D" path="res://assets/native/hub_sis/sis_walk_5.png" id="d6"]
+[ext_resource type="Texture2D" path="res://assets/normals/hub_sis/sis_walk_5_n.png" id="n6"]
+
+[sub_resource type="CanvasTexture" id="ct0"]
+diffuse_texture = ExtResource("d0")
+normal_texture = ExtResource("n0")
+
+[sub_resource type="CanvasTexture" id="ct1"]
+diffuse_texture = ExtResource("d1")
+normal_texture = ExtResource("n1")
+
+[sub_resource type="CanvasTexture" id="ct2"]
+diffuse_texture = ExtResource("d2")
+normal_texture = ExtResource("n2")
+
+[sub_resource type="CanvasTexture" id="ct3"]
+diffuse_texture = ExtResource("d3")
+normal_texture = ExtResource("n3")
+
+[sub_resource type="CanvasTexture" id="ct4"]
+diffuse_texture = ExtResource("d4")
+normal_texture = ExtResource("n4")
+
+[sub_resource type="CanvasTexture" id="ct5"]
+diffuse_texture = ExtResource("d5")
+normal_texture = ExtResource("n5")
+
+[sub_resource type="CanvasTexture" id="ct6"]
+diffuse_texture = ExtResource("d6")
+normal_texture = ExtResource("n6")
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("ct0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("ct1")
+}, {
+"duration": 1.0,
+"texture": SubResource("ct2")
+}, {
+"duration": 1.0,
+"texture": SubResource("ct3")
+}, {
+"duration": 1.0,
+"texture": SubResource("ct4")
+}, {
+"duration": 1.0,
+"texture": SubResource("ct5")
+}, {
+"duration": 1.0,
+"texture": SubResource("ct6")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 9.0
+}]

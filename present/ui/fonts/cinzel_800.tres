@@ -1,0 +1,11 @@
+[gd_resource type="FontVariation" load_steps=3 format=3]
+
+[ext_resource type="FontFile" path="res://assets/fonts/Cinzel-VariableFont_wght.ttf" id="1_nsv7w"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_800.tres" id="2_ddtbc"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("2_ddtbc")])
+base_font = ExtResource("1_nsv7w")
+variation_opentype = {
+2003265652: 800
+}

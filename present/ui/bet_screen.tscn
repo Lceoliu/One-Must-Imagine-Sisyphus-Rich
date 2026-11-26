@@ -1,0 +1,278 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="Theme" path="res://present/ui/theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://present/ui/bet_screen.gd" id="2_script"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_900.tres" id="3_s900"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_500.tres" id="4_s500"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/cinzel_700.tres" id="5_cinzel"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_600.tres" id="6_s600"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_800.tres" id="7_s800"]
+[ext_resource type="Texture2D" path="res://assets/native/bet_stele/bet_stele.png" id="8_stele"]
+[ext_resource type="Script" path="res://present/ui/bet_board.gd" id="9_board"]
+[ext_resource type="Texture2D" path="res://assets/ui/slider_chip.png" id="10_grab"]
+[ext_resource type="Texture2D" path="res://assets/ui/slider_chip_hi.png" id="11_grabhi"]
+
+[sub_resource type="StyleBoxFlat" id="sb_track"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.0705882, 0.0470588, 0.0392157, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.94509804, 0.8901961, 0.78431374, 0.5)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="sb_fill"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.9411765, 0.7254902, 0.22745098, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="sb_info"]
+content_margin_left = 36.0
+content_margin_top = 30.0
+content_margin_right = 36.0
+content_margin_bottom = 30.0
+bg_color = Color(0.0705882, 0.0470588, 0.0392157, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.94, 0.725, 0.227, 0.7)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="BetScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03, 0.022, 0.018, 0.9)
+
+[node name="Head" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 48.0
+offset_top = 28.0
+offset_right = 1400.0
+offset_bottom = 88.0
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="Head"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8784314, 0.5411765, 1)
+theme_override_fonts/font = ExtResource("3_s900")
+theme_override_font_sizes/font_size = 40
+text = "提喀 · 高度盘"
+
+[node name="Sub" type="Label" parent="Head"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+theme_override_fonts/font = ExtResource("4_s500")
+theme_override_font_sizes/font_size = 17
+text = "押明天推到的最高海拔。白天推过去当场兑现；日落前没推到，赌本归庄。"
+
+[node name="Stele" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -560.0
+offset_top = -470.0
+offset_right = -325.0
+offset_bottom = 470.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_stele")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Board" type="Control" parent="Stele"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_right = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_board")
+
+[node name="Info" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -330.0
+offset_right = 560.0
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("sb_info")
+
+[node name="VBox" type="VBoxContainer" parent="Info"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Quote" type="Label" parent="Info/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(660, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+theme_override_fonts/font = ExtResource("4_s500")
+theme_override_font_sizes/font_size = 17
+text = "提喀：那根金线是你的最高纪录。押过它，我多赔一成。"
+autowrap_mode = 3
+
+[node name="Height" type="Label" parent="Info/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("3_s900")
+theme_override_font_sizes/font_size = 48
+text = "押 123 m"
+
+[node name="Odds" type="Label" parent="Info/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8784314, 0.5411765, 1)
+theme_override_fonts/font = ExtResource("5_cinzel")
+theme_override_font_sizes/font_size = 36
+text = "赔率 2.02"
+
+[node name="Note" type="Label" parent="Info/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(660, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+theme_override_fonts/font = ExtResource("4_s500")
+theme_override_font_sizes/font_size = 16
+text = "金线以上赔率略高。"
+autowrap_mode = 3
+
+[node name="StakeRow" type="HBoxContainer" parent="Info/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="StakeName" type="Label" parent="Info/VBox/StakeRow"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("6_s600")
+theme_override_font_sizes/font_size = 20
+text = "赌本"
+
+[node name="StakeSlider" type="HSlider" parent="Info/VBox/StakeRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_icons/grabber = ExtResource("10_grab")
+theme_override_icons/grabber_highlight = ExtResource("11_grabhi")
+theme_override_styles/slider = SubResource("sb_track")
+theme_override_styles/grabber_area = SubResource("sb_fill")
+theme_override_styles/grabber_area_highlight = SubResource("sb_fill")
+min_value = 1.0
+value = 10.0
+rounded = true
+
+[node name="StakePct" type="Label" parent="Info/VBox/StakeRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("6_s600")
+theme_override_font_sizes/font_size = 20
+text = "10%"
+horizontal_alignment = 2
+
+[node name="StakeVal" type="Label" parent="Info/VBox/StakeRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8784314, 0.5411765, 1)
+theme_override_fonts/font = ExtResource("5_cinzel")
+theme_override_font_sizes/font_size = 22
+text = "300"
+
+[node name="Payout" type="Label" parent="Info/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+theme_override_fonts/font = ExtResource("6_s600")
+theme_override_font_sizes/font_size = 22
+text = "押 300 → 赢回 606"
+
+[node name="Gap" type="Control" parent="Info/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Buttons" type="HBoxContainer" parent="Info/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Place" type="Button" parent="Info/VBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 52)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_s800")
+theme_override_font_sizes/font_size = 24
+text = "押注"
+
+[node name="Cancel" type="Button" parent="Info/VBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 52)
+layout_mode = 2
+text = "撤回赌本"
+
+[node name="Back" type="Button" parent="Info/VBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 52)
+layout_mode = 2
+text = "回到宴会"
+
+[node name="Hint" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -600.0
+offset_top = -60.0
+offset_right = 600.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+theme_override_fonts/font = ExtResource("4_s500")
+theme_override_font_sizes/font_size = 15
+text = "↑ ↓ 挪筹码（Shift 一次 5 m）· ← → 调赌本 · 也可以直接拖 · 回车押注 · Esc 回到宴会"
+horizontal_alignment = 1

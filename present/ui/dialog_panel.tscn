@@ -1,0 +1,165 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Theme" path="res://present/ui/theme.tres" id="1_0e47t"]
+[ext_resource type="Script" path="res://present/ui/dialog_panel.gd" id="2_136yf"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_800.tres" id="3_qbu0g"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/greek.tres" id="4_dbg5j"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_500.tres" id="5_c47wh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klof5"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.11764706, 0.078431375, 0.05882353, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.78431374, 0.39215687, 0.16470589, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_porback"]
+bg_color = Color(0.72156864, 0.4117647, 0.23529412, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.07058824, 0.047058824, 0.039215688, 1)
+corner_radius_top_left = 140
+corner_radius_top_right = 140
+corner_detail = 16
+
+[node name="DialogPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("1_0e47t")
+script = ExtResource("2_136yf")
+
+[node name="Dim" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.02, 0.015, 0.01, 0.25)
+
+[node name="Panel" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -590.0
+offset_top = -317.0
+offset_right = 590.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_klof5")
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/margin_left = 318
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 18
+
+[node name="VB" type="VBoxContainer" parent="Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="NameRow" type="HBoxContainer" parent="Panel/Margin/VB"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Name" type="Label" parent="Panel/Margin/VB/NameRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qbu0g")
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+text = "赫拉"
+
+[node name="Greek" type="Label" parent="Panel/Margin/VB/NameRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_dbg5j")
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.78431374, 0.39215687, 0.16470589, 1)
+text = "ΗΡΑ"
+
+[node name="Text" type="Label" parent="Panel/Margin/VB"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("5_c47wh")
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+text = "宙斯说他马上就到，这话他从雅典建城那年说到现在。"
+autowrap_mode = 3
+
+[node name="Foot" type="HBoxContainer" parent="Panel/Margin/VB"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Choices" type="HBoxContainer" parent="Panel/Margin/VB/Foot"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Gap" type="Control" parent="Panel/Margin/VB/Foot"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Next" type="Label" parent="Panel/Margin/VB/Foot"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_c47wh")
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "1 / 2  ▼"
+horizontal_alignment = 2
+
+[node name="PorBack" type="Panel" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -570.0
+offset_top = -358.0
+offset_right = -291.0
+offset_bottom = -97.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_porback")
+
+[node name="Portrait" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -578.0
+offset_top = -462.0
+offset_right = -283.0
+offset_bottom = -27.0
+mouse_filter = 2

@@ -1,0 +1,135 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Theme" path="res://present/ui/theme.tres" id="1_h2l2j"]
+[ext_resource type="Script" path="res://present/ui/pick_panel.gd" id="2_iy38s"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_900.tres" id="3_ot0pg"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_500.tres" id="4_fweeh"]
+[ext_resource type="PackedScene" path="res://present/ui/pick_card.tscn" id="5_ien8o"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_700.tres" id="6_cvvmq"]
+
+[node name="PickPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("1_h2l2j")
+script = ExtResource("2_iy38s")
+
+[node name="Dim" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.02, 0.015, 0.01, 0.5)
+
+[node name="Knock" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -60.0
+offset_right = 300.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("3_ot0pg")
+theme_override_font_sizes/font_size = 64
+theme_override_colors/font_color = Color(1, 0.8784314, 0.5411765, 1)
+text = "叩 · 叩 · 叩"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Cards" type="VBoxContainer" parent="Center"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Title" type="Label" parent="Center/Cards"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ot0pg")
+theme_override_font_sizes/font_size = 34
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+text = "赐福祭坛 · 100 米"
+horizontal_alignment = 1
+
+[node name="Sub" type="Label" parent="Center/Cards"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fweeh")
+theme_override_font_sizes/font_size = 17
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "三选一"
+horizontal_alignment = 1
+
+[node name="Box" type="HBoxContainer" parent="Center/Cards"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="Sample1" parent="Center/Cards/Box" instance=ExtResource("5_ien8o")]
+layout_mode = 2
+
+[node name="Sample2" parent="Center/Cards/Box" instance=ExtResource("5_ien8o")]
+layout_mode = 2
+
+[node name="Sample3" parent="Center/Cards/Box" instance=ExtResource("5_ien8o")]
+layout_mode = 2
+
+[node name="Foot" type="HBoxContainer" parent="Center/Cards"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Hint" type="Label" parent="Center/Cards/Foot"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fweeh")
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "点击卡片或按 1–3 选择"
+horizontal_alignment = 1
+
+[node name="Reroll" type="Button" parent="Center/Cards/Foot"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_cvvmq")
+theme_override_font_sizes/font_size = 16
+text = "神前再掷（剩 1）"
+
+[node name="Skip" type="Button" parent="Center/Cards/Foot"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_cvvmq")
+theme_override_font_sizes/font_size = 16
+text = "向神致意，不取"
+
+[node name="SkipNote" type="Label" parent="Center/Cards"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fweeh")
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "不取：……"
+horizontal_alignment = 1
+
+[node name="Held" type="Label" parent="Center/Cards"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1100, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fweeh")
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+horizontal_alignment = 1
+autowrap_mode = 3

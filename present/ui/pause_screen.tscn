@@ -1,0 +1,141 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Theme" path="res://present/ui/theme_vase.tres" id="1_theme"]
+[ext_resource type="Script" path="res://present/ui/pause_screen.gd" id="2_script"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_900.tres" id="3_s900"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_500.tres" id="4_s500"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_800.tres" id="5_s800"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_700.tres" id="6_s700"]
+[ext_resource type="Script" path="res://present/ui/meander_rule.gd" id="7_rule"]
+
+[node name="PauseScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0705882, 0.0470588, 0.0392157, 0.5)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="Center/Panel/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_s900")
+theme_override_font_sizes/font_size = 40
+text = "暂 停"
+horizontal_alignment = 1
+
+[node name="Rule" type="Control" parent="Center/Panel/VBox"]
+custom_minimum_size = Vector2(180, 12)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+script = ExtResource("7_rule")
+
+[node name="Sub" type="Label" parent="Center/Panel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 0.7)
+theme_override_fonts/font = ExtResource("4_s500")
+theme_override_font_sizes/font_size = 17
+text = "石头就在这里。歇够了再推。"
+horizontal_alignment = 1
+
+[node name="Gap" type="Control" parent="Center/Panel/VBox"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Resume" type="Button" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("5_s800")
+theme_override_font_sizes/font_size = 26
+text = "继续"
+
+[node name="Settings" type="Button" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_s700")
+theme_override_font_sizes/font_size = 22
+text = "设置"
+
+[node name="Records" type="Button" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_s700")
+theme_override_font_sizes/font_size = 22
+text = "统计"
+
+[node name="Feedback" type="Button" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_s700")
+theme_override_font_sizes/font_size = 22
+text = "反馈 / 报告问题"
+
+[node name="Menu" type="Button" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_s700")
+theme_override_font_sizes/font_size = 22
+text = "回主菜单"
+
+[node name="Quit" type="Button" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_s700")
+theme_override_font_sizes/font_size = 22
+text = "退出游戏"
+
+[node name="Gap2" type="Control" parent="Center/Panel/VBox"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Version" type="Label" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.0705882, 0.0470588, 0.0392157, 0.55)
+theme_override_fonts/font = ExtResource("4_s500")
+theme_override_font_sizes/font_size = 15
+text = "抢先体验 v0.1.0"
+horizontal_alignment = 1

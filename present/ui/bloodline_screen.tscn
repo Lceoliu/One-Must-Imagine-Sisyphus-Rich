@@ -1,0 +1,258 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Theme" path="res://present/ui/theme.tres" id="1_kaa7e"]
+[ext_resource type="Script" path="res://present/ui/bloodline_screen.gd" id="2_l7af0"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_900.tres" id="3_5od2b"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_500.tres" id="4_bu1ds"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_800.tres" id="5_n168j"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/cinzel_700.tres" id="6_5fo1t"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_700.tres" id="7_u4fw6"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_600.tres" id="8_ljqas"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjryh"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0.11764706, 0.078431375, 0.05882353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.78431374, 0.39215687, 0.16470589, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcwqi"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.22745098, 0.14117648, 0.0627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.7254902, 0.22745098, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbu7e"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.2901961, 0.18039216, 0.078431375, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.8784314, 0.5411765, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(2, 4)
+
+[node name="BloodlineScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("1_kaa7e")
+script = ExtResource("2_l7af0")
+
+[node name="Dim" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.02, 0.015, 0.01, 0.9)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gjryh")
+
+[node name="VB" type="VBoxContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Center/Panel/VB"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5od2b")
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+text = "血脉 · 第 1 代落幕"
+
+[node name="Sub" type="Label" parent="Center/Panel/VB"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_bu1ds")
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "冥府人事部 · 离职证明 No.0001 · 离职原因「日出」"
+
+[node name="Body" type="HBoxContainer" parent="Center/Panel/VB"]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Ledger" type="VBoxContainer" parent="Center/Panel/VB/Body"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Head" type="Label" parent="Center/Panel/VB/Body/Ledger"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_n168j")
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.9411765, 0.7254902, 0.22745098, 1)
+text = "血脉余烬"
+
+[node name="Rows" type="VBoxContainer" parent="Center/Panel/VB/Body/Ledger"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Total" type="HBoxContainer" parent="Center/Panel/VB/Body/Ledger"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Center/Panel/VB/Body/Ledger/Total"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5od2b")
+theme_override_font_sizes/font_size = 26
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+text = "余烬"
+
+[node name="Embers" type="Label" parent="Center/Panel/VB/Body/Ledger/Total"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_5fo1t")
+theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(1, 0.8784314, 0.5411765, 1)
+text = "+0"
+horizontal_alignment = 2
+
+[node name="Note" type="Label" parent="Center/Panel/VB/Body/Ledger"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_bu1ds")
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "兹证明此人推石尽职，余烬照章结清，准予转世。
+注：本证明不对下一代的推石结果负责。"
+
+[node name="Balance" type="Label" parent="Center/Panel/VB/Body/Ledger"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_u4fw6")
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+text = "现有余烬 0 · 累计 0"
+
+[node name="Stele" type="Label" parent="Center/Panel/VB/Body/Ledger"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_ljqas")
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.9411765, 0.7254902, 0.22745098, 1)
+text = "你的石碑立在山顶：……"
+autowrap_mode = 3
+
+[node name="EpitaphHead" type="Label" parent="Center/Panel/VB/Body/Ledger"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_ljqas")
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "刻一句话（12 字内）"
+
+[node name="Epitaph" type="LineEdit" parent="Center/Panel/VB/Body/Ledger"]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "比如：石头叫明天"
+max_length = 12
+
+[node name="Heir" type="VBoxContainer" parent="Center/Panel/VB/Body"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Head" type="Label" parent="Center/Panel/VB/Body/Heir"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_n168j")
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.9411765, 0.7254902, 0.22745098, 1)
+text = "祖传 · 用余烬换给下一代的东西"
+
+[node name="Tree" type="GridContainer" parent="Center/Panel/VB/Body/Heir"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="TipName" type="Label" parent="Center/Panel/VB/Body/Heir"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_n168j")
+theme_override_font_sizes/font_size = 17
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+text = "把鼠标移到章上查看"
+
+[node name="TipDesc" type="Label" parent="Center/Panel/VB/Body/Heir"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(620, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_bu1ds")
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "祖传节点永久有效；开局类节点从下一代起生效。"
+autowrap_mode = 3
+
+[node name="Foot" type="HBoxContainer" parent="Center/Panel/VB"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Unlocks" type="Label" parent="Center/Panel/VB/Foot"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_bu1ds")
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "热度上限 0"
+autowrap_mode = 3
+
+[node name="Go" type="Button" parent="Center/Panel/VB/Foot"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xcwqi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rbu7e")
+theme_override_colors/font_color = Color(1, 0.8784314, 0.5411765, 1)
+theme_override_fonts/font = ExtResource("5_n168j")
+theme_override_font_sizes/font_size = 22
+text = "传给第 2 代"

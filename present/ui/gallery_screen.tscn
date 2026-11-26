@@ -1,0 +1,247 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Theme" path="res://present/ui/theme.tres" id="1_uk4oa"]
+[ext_resource type="Script" path="res://present/ui/gallery_screen.gd" id="2_0wtor"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_900.tres" id="3_xoyvl"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_500.tres" id="4_8gew7"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_600.tres" id="5_i27kt"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_800.tres" id="6_lqg6p"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_700.tres" id="7_fbgde"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxxw2"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0.11764706, 0.078431375, 0.05882353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.78431374, 0.39215687, 0.16470589, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cgij"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.07058824, 0.047058824, 0.039215688, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.7254902, 0.22745098, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_445w4"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.07058824, 0.047058824, 0.039215688, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.7254902, 0.22745098, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(2, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_reaa6"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.07058824, 0.047058824, 0.039215688, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.7254902, 0.22745098, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(2, 4)
+
+[node name="GalleryScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("1_uk4oa")
+script = ExtResource("2_0wtor")
+
+[node name="Dim" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.02, 0.015, 0.01, 0.92)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bxxw2")
+
+[node name="VBox" type="VBoxContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Center/Panel/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xoyvl")
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+text = "结局画廊"
+
+[node name="Count" type="Label" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_8gew7")
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "已见 0 / 9 · 每只陶瓶上画着一个结局"
+
+[node name="Grid" type="GridContainer" parent="Center/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 14
+columns = 3
+
+[node name="Sample1" type="PanelContainer" parent="Center/Panel/VBox/Grid"]
+custom_minimum_size = Vector2(300, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cgij")
+
+[node name="V" type="VBoxContainer" parent="Center/Panel/VBox/Grid/Sample1"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Kind" type="Label" parent="Center/Panel/VBox/Grid/Sample1/V"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_i27kt")
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "结局"
+
+[node name="Name" type="Label" parent="Center/Panel/VBox/Grid/Sample1/V"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_lqg6p")
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+text = "示例结局"
+
+[node name="Seen" type="Label" parent="Center/Panel/VBox/Grid/Sample1/V"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_8gew7")
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "第 1 代初见 · 见过 1 次"
+
+[node name="Sample2" type="PanelContainer" parent="Center/Panel/VBox/Grid"]
+custom_minimum_size = Vector2(300, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_445w4")
+
+[node name="V" type="VBoxContainer" parent="Center/Panel/VBox/Grid/Sample2"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Kind" type="Label" parent="Center/Panel/VBox/Grid/Sample2/V"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_i27kt")
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "结局"
+
+[node name="Name" type="Label" parent="Center/Panel/VBox/Grid/Sample2/V"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_lqg6p")
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+text = "示例结局"
+
+[node name="Seen" type="Label" parent="Center/Panel/VBox/Grid/Sample2/V"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_8gew7")
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "第 1 代初见 · 见过 1 次"
+
+[node name="Sample3" type="PanelContainer" parent="Center/Panel/VBox/Grid"]
+custom_minimum_size = Vector2(300, 130)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_reaa6")
+
+[node name="V" type="VBoxContainer" parent="Center/Panel/VBox/Grid/Sample3"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Kind" type="Label" parent="Center/Panel/VBox/Grid/Sample3/V"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_i27kt")
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "结局"
+
+[node name="Name" type="Label" parent="Center/Panel/VBox/Grid/Sample3/V"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_lqg6p")
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+text = "示例结局"
+
+[node name="Seen" type="Label" parent="Center/Panel/VBox/Grid/Sample3/V"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_8gew7")
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "第 1 代初见 · 见过 1 次"
+
+[node name="Foot" type="HBoxContainer" parent="Center/Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Summary" type="Label" parent="Center/Panel/VBox/Foot"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_8gew7")
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "先祖石碑 0 座"
+
+[node name="Back" type="Button" parent="Center/Panel/VBox/Foot"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_fbgde")
+theme_override_font_sizes/font_size = 18
+text = "返回"

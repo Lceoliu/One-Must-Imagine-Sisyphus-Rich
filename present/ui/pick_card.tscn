@@ -1,0 +1,191 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://present/ui/pick_card.gd" id="1_hve62"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/cinzel_900.tres" id="2_byhya"]
+[ext_resource type="Texture2D" path="res://assets/sprites/sh_gods1/god_hermes.png" id="3_epo2y"]
+[ext_resource type="Texture2D" path="res://assets/sprites/sh_gods1/god_apollo.png" id="4_bukmi"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_600.tres" id="5_ged85"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_700.tres" id="6_scrar"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_900.tres" id="7_rrvmt"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_800.tres" id="8_q4y1k"]
+[ext_resource type="FontVariation" path="res://present/ui/fonts/serif_500.tres" id="9_u2767"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36vaf"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.11764706, 0.078431375, 0.05882353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.7254902, 0.22745098, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 6
+shadow_offset = Vector2(2, 4)
+
+[node name="PickCard" type="PanelContainer"]
+custom_minimum_size = Vector2(300, 290)
+theme_override_styles/panel = SubResource("StyleBoxFlat_36vaf")
+script = ExtResource("1_hve62")
+
+[node name="VB" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Top" type="HBoxContainer" parent="VB"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Key" type="Label" parent="VB/Top"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_byhya")
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.9411765, 0.7254902, 0.22745098, 1)
+text = "1"
+
+[node name="Medal" type="TextureRect" parent="VB/Top"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(56, 56)
+layout_mode = 2
+texture = ExtResource("3_epo2y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Medal2" type="TextureRect" parent="VB/Top"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("4_bukmi")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Who" type="VBoxContainer" parent="VB/Top"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="WhoName" type="Label" parent="VB/Top/Who"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ged85")
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "赫尔墨斯"
+
+[node name="Meta" type="Label" parent="VB/Top/Who"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_scrar")
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.9411765, 0.7254902, 0.22745098, 1)
+text = "I 阶 · 加急快递"
+
+[node name="Name" type="Label" parent="VB"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(268, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_rrvmt")
+theme_override_font_sizes/font_size = 28
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+text = "加急件"
+
+[node name="Hi" type="Label" parent="VB"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(268, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_q4y1k")
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(1, 0.8784314, 0.5411765, 1)
+text = "夜里多送 1 程"
+autowrap_mode = 3
+
+[node name="Lo" type="Label" parent="VB"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(268, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ged85")
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.94509804, 0.8901961, 0.78431374, 1)
+text = "石头停下后送回本夜起滚海拔的 1/4 再滚一程"
+autowrap_mode = 3
+
+[node name="CostHead" type="Label" parent="VB"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(268, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_scrar")
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "怨气"
+
+[node name="Costs" type="VBoxContainer" parent="VB"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Cost" type="Label" parent="VB"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(268, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ged85")
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.6901961, 0.4392157, 0.3529412, 1)
+autowrap_mode = 3
+
+[node name="Desc" type="Label" parent="VB"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(268, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_u2767")
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "说明"
+autowrap_mode = 3
+
+[node name="Fill" type="Control" parent="VB"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Quip" type="Label" parent="VB"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(268, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_u2767")
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 0.8)
+text = "本快递不支持退货。"
+autowrap_mode = 3
+
+[node name="Blind" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Q" type="Label" parent="Blind"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("7_rrvmt")
+theme_override_font_sizes/font_size = 120
+theme_override_colors/font_color = Color(0.9411765, 0.7254902, 0.22745098, 1)
+text = "？"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Note" type="Label" parent="Blind"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ged85")
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.7254902, 0.64705884, 0.54901963, 1)
+text = "盖着的卡 · 选了才揭晓"
+horizontal_alignment = 1

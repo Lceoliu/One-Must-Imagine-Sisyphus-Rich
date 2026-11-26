@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://present/shaders/town_row.gdshader" id="1_tw"]
+
+[resource]
+shader = ExtResource("1_tw")
+shader_parameter/haze = Color(0.15, 0.118, 0.1, 1)
+shader_parameter/haze_night = Color(0.055, 0.066, 0.115, 1)
+shader_parameter/line_fade = 0.1
